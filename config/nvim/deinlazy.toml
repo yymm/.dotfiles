@@ -1,0 +1,35 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+if = "has('nvim')"
+on_i = 1
+hook_source = '''
+source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+depends = 'context_filetype.vim'
+if = "has('lua')"
+on_i = 1
+hook_source = '''
+  source ~/.config/nvim/plugins/neocomplete.rc.vim
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+depends = 'deoplete.nvim'
+if = "has('nvim')"
+on_ft = 'python'
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
+on_source = ['neocomplete.vim', 'deoplete.nvim']
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft = 'rust'
+hook_source = '''
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH="/usr/local/src/rustc-1.13.0/src/"
+'''

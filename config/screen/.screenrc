@@ -1,0 +1,19 @@
+# escape
+escape ^Tt
+# 256 color
+term xterm-256color
+# No Visual Bell
+vbell on
+# AutoDetatch
+autodetach on
+# Shell
+shell /usr/bin/zsh
+# divide screen
+altscreen on
+# Startup Message Off
+startup_message off
+# For Vim
+altscreen on
+# HardStatus
+#caption always “%{b RK} %y/%m/%d(%D)%c:%s %{bu dr} | %-w%{=bu CK}%n %t%{-}%+w”
+hardstatus alwayslastline '%{=b .y}@%H %-w%{=bu cw}%n:%t%{-}%+w %= %{b .g}%Y/%m/%d %{=b.g}%c:%s'
