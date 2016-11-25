@@ -1,1 +1,109 @@
-/home/yano/.dotfiles/.vimperatorrc
+" vimperator setting
+
+" vimp colorscheme ~/vimperator/colors
+colorscheme yymm_sweets
+
+" Title
+set titlestring=Firefox
+
+" detail = 5 lines
+" set verbose=5
+
+" j,k * 5
+noremap j 5<C-e>
+noremap k 5<C-y>
+
+" h:1page back / l:1page return
+noremap h <A-Left>
+noremap l <A-Right>
+
+" tabnew
+noremap <silent> tn :<C-u>tabnew<CR>
+
+" mybookmarks
+"map B :open about:mybookmarks<CR>
+
+" bmarks
+map ,b :bmarks!
+
+" gt gT -> J/K
+noremap K gT
+noremap J gt
+
+"hint -> alphabet
+set hintchars=asdfghjklzxcvbnm
+
+" hint mode -> open newtab
+"noremap f F
+"noremap F f
+
+" d -> Nop
+noremap x d
+noremap d <Nop> 
+" gh -> Nop
+noremap gh <Nop>
+
+" google search
+map ,G :open<space>google<space>
+map ,g :tabopen<space>google<space>
+
+" tab-history
+nnoremap < :tabh back<CR>
+nnoremap > :tabh forward<CR>
+
+" url_copy.js
+map ty :copyurl -t<CR>
+map ry :copyurl -r<CR>
+map my :copyurl -m<CR>
+
+" map S :js commandline.open(":","open<space>google<space>",modes.EX)<CR>
+js <<EOM
+mappings.add([modes.NORMAL], [",tw"],
+        "Twitter send with url ",
+        function () { commandline.open("", "memo => [" + buffer.title + "](" + buffer.URL + ")", modes.EX); });
+EOM
+
+"javascript to hide statusbar
+noremap <silent> <F8> :js toggle_bottombar()<CR>
+noremap : :js toggle_bottombar('on')<CR>:
+noremap o :js toggle_bottombar('on')<CR>o
+noremap O :js toggle_bottombar('on')<CR>O
+noremap t :js toggle_bottombar('on')<CR>t
+noremap T :js toggle_bottombar('on')<CR>t
+noremap / :js toggle_bottombar('on')<CR>/
+cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
+cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
+
+:js << EOF
+var hl = highlight.get('ContentSeparator');
+var cs_current = hl.value;
+
+function toggle_bottombar(p) {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    if (p == 'on'){
+        show_bottombar(bb);
+        return;
+    }
+    if (p == 'off'){
+        hide_bottombar(bb)
+        return;
+    }
+    bb.style.height == '' ? hide_bottombar(bb) : show_bottombar(bb);
+}
+
+function show_bottombar(bb) {
+    bb.style.height = '';
+    bb.style.overflow = '';
+    liberator.execute('highlight ContentSeparator ' + cs_current);
+}
+
+function hide_bottombar(bb) {
+    bb.style.height = '0px';
+    bb.style.overflow = 'hidden';
+    liberator.execute('highlight ContentSeparator display: none;');
+}
+
+toggle_bottombar();
+EOF
