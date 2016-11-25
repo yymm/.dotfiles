@@ -9,61 +9,93 @@
 # nyaovim
 
 import os
+import sys
 import shutil
+import platform
 
 # ------------------------------------------------------------------------------
 # neovim
 
 def neovim():
+    print('>>> neovim & vim')
     if not shutil.which('nvim'):
-        # not installed neovim
-        print('neovim not installed, see https://github.com/neovim/neovim/wiki/Installing-Neovim')
+        print('Error[neovim] >> not installed, see https://github.com/neovim/neovim/wiki/Installing-Neovim')
         return
-
     # neovim
     os.system('ln -nsf ~/.dotfiles/config/nvim ~/.config/')
     # vim
-    os.system('ln -sf  ~/.dotfiles/config/nvim/init.vim ~/.vimrc')
-    os.system('ln -sf  ~/.dotfiles/config/nvim/options.rc.vim ~/.vim/')
-    os.system('ln -sf  ~/.dotfiles/config/nvim/keymap.rc.vim ~/.vim/')
-
-    if not shutil.which('rusrc'):
-         # not installed rust
-        print('rust not installed ')
+    os.system('ln -sf ~/.dotfiles/config/nvim/init.vim ~/.vimrc')
+    os.system('ln -sf ~/.dotfiles/config/nvim/options.rc.vim ~/.vim/')
+    os.system('ln -sf ~/.dotfiles/config/nvim/keymap.rc.vim ~/.vim/')
+    # Dependency
+    # > Jedi
+    # $ pip2 install --user --upgrade neovim
+    # $ pip3 install --user --upgrade neovim
+    # $ pip2 install --user jedi
+    # $ pip3 install --user jedi
+    # > Racer
+    # - Install rustlang => curl -sSf https://static.rust-lang.org/rustup.sh | sh
+    # - Downloads rust source code => https://www.rust-lang.org/en-US/downloads.html
+    # - Extract this to /usr/local/src/rustc-X.XX.X
+    # - cargo install racer
+    # > deoplete.nvim
+    # - :UpdateRemotePlugins
+    print('<<< [ok] neovim & vim')
 
 def git():
+    print('>>> git')
     if not shutil.which('git'):
-        printf('sudo apt install git -y')
+        printf('Error[git] >> sudo apt install git -y')
         return
     os.system('ln -sf  ~/.dotfiles/config/git/.gitconfig ~/')
+    print('<<< [ok] git')
 
 def tmux():
+    print('>>> tmux')
     if not shutil.which('tmux'):
-        printf('sudo apt install tmux -y')
+        printf('Error[tmux] >> sudo apt install tmux -y')
+        return
+    if not shutil.which('tmux-mem-cpu-load'):
+        printf('Error[tmux] >> See https://github.com/thewtex/tmux-mem-cpu-load#installation')
         return
     os.system('ln -sf ~/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf')
-    os.system('ln -nsf ~/.dotfiles/config/tmux/.tmux-powerline ~/.tmux-powerline')
+    os.system('cp -rf ~/.dotfiles/config/tmux/.tmux-powerline ~/.tmux-powerline')
     os.system('ln -sf ~/.dotfiles/config/tmux/default.sh ~/.tmux-powerline/themes/default.sh')
     os.system('ln -sf ~/.dotfiles/config/tmux/tmux_mem_cpu_load.sh ~/.tmux-powerline/segments/tmux_mem_cpu_load.sh')
     os.system('ln -sf ~/.dotfiles/config/tmux/weather.sh ~/.tmux-powerline/segments/weather.sh')
+    print('<<< [ok] tmux')
 
 def vimperator():
+    print('>>> vimperator')
     os.system('ln -sf ~/.dotfiles/config/vimperator/.vimperatorrc ~/.vimperatorrc')
     os.system('ln -nsf ~/.dotfiles/config/vimperator/.vimperator ~/.vimperator')
+    print('<<< [ok] vimperator')
 
 def fish():
+    print('>>> fish')
     if not shutil.which('fish'):
-        printf('sudo apt install fish -y')
+        print('Error[fish] >> sudo apt install fish -y')
         return
     os.system('ln -nsf ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish')
+    print('<<< [ok] fish')
 
 def nyaovim():
+    print('>>> nyaovim')
+    if not shutil.which('fish'):
+        print('Error[nyaovim] >> npm install -g nyaovim')
+        return
     os.system('ln -nsf ~/.dotfiles/config/nyaovim//nyaovimrc.html ~/.config/nyaovim/nyaovimrc.html')
+    print('<<< [ok] nyaovim')
 
 if __name__ == '__main__':
+    version = platform.python_version_tuple()
+    if version[0] == '2':
+        print('Only python3!')
+        sys.exit(1)
     neovim()
     git()
     tmux()
     vimperator()
     fish()
     nyaovim()
+
