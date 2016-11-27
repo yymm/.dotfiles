@@ -1,12 +1,13 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
-# neovim
-# vim
-# tmux
-# vimperator
-# git
-# fish
-# nyaovim
+# for ubuntu/osx
+# - neovim
+# - vim
+# - tmux
+# - vimperator
+# - git
+# - fish
+# - nyaovim
 
 import os
 import sys
