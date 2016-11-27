@@ -6,7 +6,7 @@ set showmatch
 set hlsearch
 set whichwrap=b,s,h,l,<,>,[,],~
 set hidden
-set ts=4 sts=0 sw=4
+set ts=2 sts=0 sw=2 et
 set smartindent
 set cindent
 set noswapfile
@@ -56,7 +56,4 @@ let g:loaded_matchit           = 1
 " for Lang
 "
 autocmd MyAutoCmd FileType fortran set colorcolumn=5
-autocmd MyAutoCmd FileType html set sw=2 sts=2 ts=2 et
-autocmd MyAutoCmd FileType javascript set ts=2 sw=2 sts=0 et
-autocmd MyAutoCmd FileType javascript.jsx set ts=2 sw=2 sts=0 et
-autocmd MyAutoCmd FileType coffee set ts=2 sw=2 sts=0 et
+autocmd MyAutoCmd FileType cpp set ts=4 sts=0 sw=4 noet

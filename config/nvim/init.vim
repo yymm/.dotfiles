@@ -6,7 +6,14 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-let s:dein_cache_path = expand('~/.cache/dein')
+if has('nvim')
+  let s:dein_cache_path = expand('~/.cache/nvim/dein')
+elseif exists('g:nyaovim_version')
+  let s:dein_cache_path = expand('~/.cache/nyaovim/dein')
+elseif has('lua')
+  let s:dein_cache_path = expand('~/.cache/vim/dein')
+endif
+
 let s:dein_dir = s:dein_cache_path
                  \ .'/repos/github.com/Shougo/dein.vim'
 
