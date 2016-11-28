@@ -12,6 +12,8 @@ elseif exists('g:nyaovim_version')
   let s:dein_cache_path = expand('~/.cache/nyaovim/dein')
 elseif has('lua')
   let s:dein_cache_path = expand('~/.cache/vim/dein')
+else
+  let s:dein_cache_path = expand('~/.cache/nvim/dein')
 endif
 
 let s:dein_dir = s:dein_cache_path

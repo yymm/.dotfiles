@@ -39,7 +39,7 @@ set hintchars=asdfghjklzxcvbnm
 
 " d -> Nop
 noremap x d
-noremap d <Nop> 
+noremap d <Nop>
 " gh -> Nop
 noremap gh <Nop>
 

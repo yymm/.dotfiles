@@ -1,8 +1,8 @@
 "change display mapping
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nmap <Down> <C-w>j
+nmap <Up> <C-w>k
+nmap <Left> <C-w>h
+nmap <Right> <C-w>l
 "toggle hlsearch
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 "vertical size adjust '<' '>'

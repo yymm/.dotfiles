@@ -13,7 +13,7 @@ depends = 'context_filetype.vim'
 if = "has('lua')"
 on_i = 1
 hook_source = '''
-  source ~/.config/nvim/plugins/neocomplete.rc.vim
+source ~/.config/nvim/plugins/neocomplete.rc.vim
 '''
 
 [[plugins]]
