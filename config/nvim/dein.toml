@@ -63,15 +63,26 @@ repo = 'bronson/vim-trailing-whitespace'
 # linter
 # ==========================================================
 
+#[[plugins]]
+#repo = 'neomake/neomake'
+#hook_add = '''
+#source ~/.config/nvim/plugins/neomake.rc.vim
+#'''
+
+#[[plugins]]
+#repo = 'benjie/neomake-local-eslint.vim'
+#depends = 'neomake'
+#on_ft = 'javascript'
+
 [[plugins]]
-repo = 'neomake/neomake'
+repo = 'vim-syntastic/syntastic'
 hook_add = '''
-source ~/.config/nvim/plugins/neomake.rc.vim
+source ~/.config/nvim/plugins/syntastic.rc.vim
 '''
 
 [[plugins]]
-repo = 'benjie/neomake-local-eslint.vim'
-depends = 'neomake'
+repo = 'pmsorhaindo/syntastic-local-eslint.vim'
+depends = 'syntastic'
 on_ft = 'javascript'
 
 # ==========================================================
