@@ -15,6 +15,8 @@ noremap <silent>- <C-w>-
 nnoremap Y y$
 " tabnew mapping : tn
 nnoremap <silent> tn :<C-u>tabnew<CR>
+" very magic
+nnoremap /  /\v
 " vimdiff => :Diff
 command! -nargs=1 -complete=file Diff vertical diffsplit <args>
 " terminal mode
