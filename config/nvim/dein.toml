@@ -59,31 +59,42 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
+[[plugins]]
+repo = 'milkypostman/vim-togglelist'
+hook_add = '''
+nmap <script> <silent> <C-l> :call ToggleLocationList()<CR>
+" Bug: not work in neovim
+"nmap <script> <silent> <C-q> :call ToggleQuickfixList()<CR>
+'''
+
 # ==========================================================
 # linter
 # ==========================================================
 
-#[[plugins]]
-#repo = 'neomake/neomake'
-#hook_add = '''
-#source ~/.config/nvim/plugins/neomake.rc.vim
-#'''
+[[plugins]]
+repo = 'neomake/neomake'
+if = "has('nvim')"
+hook_add = '''
+source ~/.config/nvim/plugins/neomake.rc.vim
+'''
 
 #[[plugins]]
 #repo = 'benjie/neomake-local-eslint.vim'
+#if = "has('nvim')"
 #depends = 'neomake'
-#on_ft = 'javascript'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
+if = "!has('nvim')"
 hook_add = '''
 source ~/.config/nvim/plugins/syntastic.rc.vim
 '''
 
-[[plugins]]
-repo = 'pmsorhaindo/syntastic-local-eslint.vim'
-depends = 'syntastic'
-on_ft = 'javascript'
+#[[plugins]]
+#repo = 'mtscout6/syntastic-local-eslint.vim'
+#if = "!has('nvim')"
+#depends = 'syntastic'
+#on_ft = 'javascript'
 
 # ==========================================================
 # filer

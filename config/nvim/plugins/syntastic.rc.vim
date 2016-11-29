@@ -1,6 +1,5 @@
-" SignColumn
-au MyAutoCmd VimEnter * highlight SignColumn ctermbg=237
 " ColorScheme
+au MyAutoCmd VimEnter * highlight SignColumn ctermbg=237
 au MyAutoCmd VimEnter * highlight SyntasticErrorSign cterm=bold ctermfg=255 ctermbg=203
 au MyAutoCmd VimEnter * highlight SyntasticWarningSign cterm=bold ctermfg=233 ctermbg=150
 let g:syntastic_error_symbol = 'E➤'
