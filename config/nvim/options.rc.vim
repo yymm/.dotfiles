@@ -13,7 +13,7 @@ set noswapfile
 set fileencodings=utf-8,euc-jp,ucs-bom,iso-2022-jp,sjis,cp932,latin1
 set nowrap
 if has('nvim')
-  set clipboard=unnamed,unnamedplus
+  set clipboard+=unnamedplus
 else
   set laststatus=2
   set wildmenu

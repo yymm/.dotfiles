@@ -59,11 +59,18 @@ def tmux():
     if not shutil.which('tmux-mem-cpu-load'):
         printf('Error[tmux] >> See https://github.com/thewtex/tmux-mem-cpu-load#installation')
         return
-    os.system('ln -sf ~/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf')
+    if "Darwin" in platform.platform():
+        os.system('ln -sf ~/.dotfiles/config/tmux/.tmux.osx.conf ~/.tmux.conf')
+    else:
+        os.system('ln -sf ~/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf')
     os.system('cp -rf ~/.dotfiles/config/tmux/.tmux-powerline ~/.tmux-powerline')
-    os.system('ln -sf ~/.dotfiles/config/tmux/default.sh ~/.tmux-powerline/themes/default.sh')
+    if not shutil.which('acpid'):
+        os.system('ln -sf ~/.dotfiles/config/tmux/default_desktop.sh ~/.tmux-powerline/themes/default.sh')
+    else:
+        os.system('ln -sf ~/.dotfiles/config/tmux/default_laptop.sh ~/.tmux-powerline/themes/default.sh')
     os.system('ln -sf ~/.dotfiles/config/tmux/tmux_mem_cpu_load.sh ~/.tmux-powerline/segments/tmux_mem_cpu_load.sh')
-    os.system('ln -sf ~/.dotfiles/config/tmux/weather.sh ~/.tmux-powerline/segments/weather.sh')
+    if shutil.which('acpid'):
+        os.system('ln -sf ~/.dotfiles/config/tmux/weather.sh ~/.tmux-powerline/segments/weather.sh')
     print('<<< [ok] tmux')
 
 def vimperator():

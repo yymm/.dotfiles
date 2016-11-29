@@ -133,6 +133,17 @@ hook_add = '''
 source ~/.config/nvim/plugins/neoterm.rc.vim
 '''
 
+[[plugins]]
+repo = 'Shougo/vimshell'
+if = "!has('nvim')"
+hook_add = '''
+source ~/.config/nvim/plugins/vimshell.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+if = "!has('nvim')"
+
 # ==========================================================
 # lang
 # ==========================================================
