@@ -143,6 +143,7 @@ source ~/.config/nvim/plugins/vimshell.rc.vim
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 if = "!has('nvim')"
+build = 'make'
 
 # ==========================================================
 # lang
@@ -156,8 +157,8 @@ on_ft = 'vim'
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
+#[[plugins]]
+#repo = 'Shougo/neoinclude.vim'
 
 [[plugins]]
 repo = 'vim-jp/cpp-vim'

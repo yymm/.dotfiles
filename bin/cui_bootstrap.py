@@ -1,16 +1,19 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # for centos
-# - neovim
-# - vim
+# - vim(neovim)
 # - tmux
 # - git
+
+import os
 
 # ------------------------------------------------------------------------------
 # neovim
 
-def neovim():
+def vim():
     print('>>> neovim & vim')
+    if not os.path.exists(os.environ['HOME'] +  '/.vim'):
+        os.mkdir(os.environ['HOME'] +  '/.vim')
     # neovim
     os.system('ln -nsf ~/.dotfiles/config/nvim ~/.config/')
     # vim
@@ -37,12 +40,6 @@ def neovim():
 
 def tmux():
     print('>>> tmux')
-    if not shutil.which('tmux'):
-        printf('Error[tmux] >> sudo apt install tmux -y')
-        return
-    if not shutil.which('tmux-mem-cpu-load'):
-        printf('Error[tmux] >> See https://github.com/thewtex/tmux-mem-cpu-load#installation')
-        return
     os.system('ln -sf ~/.dotfiles/config/tmux/.tmux.cui.conf ~/.tmux.conf')
     os.system('cp -rf ~/.dotfiles/config/tmux/.tmux-powerline ~/.tmux-powerline')
     os.system('ln -sf ~/.dotfiles/config/tmux/default_cui.sh ~/.tmux-powerline/themes/default.sh')
@@ -54,8 +51,10 @@ def tmux():
 
 def git():
     print('>>> git')
-    if not shutil.which('git'):
-        printf('Error[git] >> sudo apt install git -y')
-        return
-    os.system('ln -sf  ~/.dotfiles/config/git/.gitconfig ~/')
+    os.system('ln -sf  ~/.dotfiles/config/git/.gitconfig.cui ~/.gitconfig')
     print('<<< [ok] git')
+
+if '__main__' == __name__:
+    vim()
+    tmux()
+    git()

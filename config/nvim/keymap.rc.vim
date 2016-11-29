@@ -22,8 +22,13 @@ if has('nvim')
   tnoremap <silent> <ESC> <C-\><C-n>
 endif
 " Tab jump
-nnoremap [Tag] <Nop>
-nmap t [Tag]
-for n in range(1, 9)
-  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
-endfor
+noremap t1 1gt
+noremap t2 2gt
+noremap t3 3gt
+noremap t4 4gt
+noremap t5 5gt
+noremap t6 6gt
+noremap t7 7gt
+noremap t8 8gt
+noremap t9 9gt
+noremap t0 :tablast<cr>
