@@ -71,6 +71,9 @@ def tmux():
     os.system('ln -sf ~/.dotfiles/config/tmux/tmux_mem_cpu_load.sh ~/.tmux-powerline/segments/tmux_mem_cpu_load.sh')
     if shutil.which('acpid'):
         os.system('ln -sf ~/.dotfiles/config/tmux/weather.sh ~/.tmux-powerline/segments/weather.sh')
+    # Dependency
+    # > OSX
+    # brew install reattach-to-user-namespace
     print('<<< [ok] tmux')
 
 def vimperator():
@@ -85,6 +88,11 @@ def fish():
         print('Error[fish] >> sudo apt install fish -y')
         return
     os.system('ln -nsf ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish')
+    # Dependency
+    # > fisherman
+    # curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+    # - fisher install omf/theme-bobthefish
+    # - fisher install nvm
     print('<<< [ok] fish')
 
 def nyaovim():
@@ -106,4 +114,3 @@ if __name__ == '__main__':
     vimperator()
     fish()
     nyaovim()
-
