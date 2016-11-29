@@ -43,6 +43,9 @@ def neovim():
     # - :UpdateRemotePlugins
     print('<<< [ok] neovim & vim')
 
+# ------------------------------------------------------------------------------
+# git
+
 def git():
     print('>>> git')
     if not shutil.which('git'):
@@ -50,6 +53,9 @@ def git():
         return
     os.system('ln -sf  ~/.dotfiles/config/git/.gitconfig ~/')
     print('<<< [ok] git')
+
+# ------------------------------------------------------------------------------
+# tmux
 
 def tmux():
     print('>>> tmux')
@@ -76,11 +82,17 @@ def tmux():
     # brew install reattach-to-user-namespace
     print('<<< [ok] tmux')
 
+# ------------------------------------------------------------------------------
+# vimperator
+
 def vimperator():
     print('>>> vimperator')
     os.system('ln -sf ~/.dotfiles/config/vimperator/.vimperatorrc ~/.vimperatorrc')
     os.system('ln -nsf ~/.dotfiles/config/vimperator/.vimperator ~/.vimperator')
     print('<<< [ok] vimperator')
+
+# ------------------------------------------------------------------------------
+# fish
 
 def fish():
     print('>>> fish')
@@ -94,6 +106,9 @@ def fish():
     # - fisher install omf/theme-bobthefish
     # - fisher install nvm
     print('<<< [ok] fish')
+
+# ------------------------------------------------------------------------------
+# nyaovim
 
 def nyaovim():
     print('>>> nyaovim')

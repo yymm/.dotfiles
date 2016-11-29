@@ -21,3 +21,9 @@ command! -nargs=1 -complete=file Diff vertical diffsplit <args>
 if has('nvim')
   tnoremap <silent> <ESC> <C-\><C-n>
 endif
+" Tab jump
+nnoremap [Tag] <Nop>
+nmap t [Tag]
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
