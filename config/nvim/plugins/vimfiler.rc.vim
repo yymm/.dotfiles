@@ -8,7 +8,7 @@ let g:vimfiler_as_default_explorer = 1
 "buffer directory
 nnoremap <silent> fe :<C-u>VimFilerBufferDir -quit<CR>
 " Nerdtree like
-nnoremap <C-e> :<C-u>VimFilerBufferDir -split -winwidth=60 -toggle -no-quit<CR>
+nnoremap <C-e> :<C-u>VimFilerBufferDir -split -winwidth=120 -toggle -no-quit<CR>
 "key mapping
 autocmd MyAutoCmd FileType vimfiler call s:vimfiler_my_settings()
 function! s:vimfiler_my_settings()
