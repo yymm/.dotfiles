@@ -3,8 +3,8 @@ nmap <Down> <C-w>j
 nmap <Up> <C-w>k
 nmap <Left> <C-w>h
 nmap <Right> <C-w>l
-"toggle hlsearch
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+"hide hlsearch
+nnoremap <silent><Esc><Esc> :<C-u>nohlsearch<CR>
 "vertical size adjust '<' '>'
 nnoremap <silent>< <C-w><
 nnoremap <silent>> <C-w>>
