@@ -19,10 +19,6 @@ source ~/.config/nvim/plugins/iceberg.rc.vim
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = 'context_filetype.vim'
-
-[[plugins]]
 repo = 'scrooloose/nerdcommenter'
 hook_add = '''
 source ~/.config/nvim/plugins/nerdcomenter.rc.vim
@@ -159,74 +155,3 @@ source ~/.config/nvim/plugins/vimshell.rc.vim
 repo = 'Shougo/vimproc.vim'
 if = "!has('nvim')"
 build = 'make'
-
-# ==========================================================
-# lang
-# ==========================================================
-
-[[plugins]]
-repo = 'Shougo/neco-vim'
-on_ft = 'vim'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-#[[plugins]]
-#repo = 'Shougo/neoinclude.vim'
-
-[[plugins]]
-repo = 'vim-jp/cpp-vim'
-on_ft = ['c', 'cpp']
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = 'rust'
-
-[[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
-
-[[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-on_ft = 'python'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
-
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-on_ft = 'css'
-
-[[plugins]]
-repo = 'mxw/vim-jsx'
-on_ft = 'javascript'
-
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = 'typescript'
-
-[[plugins]]
-repo = 'dag/vim-fish'
-on_ft = 'fish'
-
-[[plugins]]
-repo = 'tikhomirov/vim-glsl'
-on_ft = 'glsl'
-
-[[plugins]]
-repo = 'neovimhaskell/haskell-vim'
-on_ft = ['haskell', 'cabal']
-
-[[plugins]]
-repo = 'rhysd/vim-gfm-syntax'
-on_ft = ['markdown', 'mkd']
-
-[[plugins]]
-repo = 'udalov/kotlin-vim'
-on_ft = 'kotlin'
-
-[[plugins]]
-repo = 'keith/swift.vim'
-on_ft = 'swift'
