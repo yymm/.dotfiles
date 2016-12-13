@@ -16,9 +16,6 @@ source ~/.config/nvim/plugins/iceberg.rc.vim
 # ==========================================================
 
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
 repo = 'scrooloose/nerdcommenter'
 hook_add = '''
 source ~/.config/nvim/plugins/nerdcomenter.rc.vim
@@ -61,6 +58,22 @@ hook_add = '''
 nmap <script> <silent> <C-l> :call ToggleLocationList()<CR>
 " Bug: not work in neovim
 "nmap <script> <silent> <C-q> :call ToggleQuickfixList()<CR>
+'''
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-function'
+
+[[plugins]]
+repo = 'osyo-manga/vim-operator-search'
+depends = ['vim-operator-user', 'vim-textobj-function', 'vim-textobj-user']
+hook_add = '''
+nmap <Space>/ <Plug>(operator-search)if
 '''
 
 # ==========================================================
