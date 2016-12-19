@@ -12,4 +12,5 @@ let g:syntastic_check_on_wq = 0
 " for javascript
 let g:syntastic_javascript_checkers = ['eslint']
 " for c/cpp
-let g:syntastic_cpp_compiler_options = '-Wall -D"DISABLE_CALC_FORTRAN"'
+let g:syntastic_cpp_include_dirs = ['src', '../src']
+let g:syntastic_cpp_compiler_options = '-Wall -D"_DEBUG"'
