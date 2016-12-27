@@ -56,8 +56,7 @@ repo = 'bronson/vim-trailing-whitespace'
 repo = 'milkypostman/vim-togglelist'
 hook_add = '''
 nmap <script> <silent> <C-l> :call ToggleLocationList()<CR>
-" Bug: not work in neovim
-"nmap <script> <silent> <C-q> :call ToggleQuickfixList()<CR>
+nmap <script> <silent> <C-q> :call ToggleQuickfixList()<CR> " Bug: not work in neovim
 '''
 
 [[plugins]]
