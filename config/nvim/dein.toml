@@ -167,3 +167,9 @@ source ~/.config/nvim/plugins/vimshell.rc.vim
 repo = 'Shougo/vimproc.vim'
 if = "!has('nvim')"
 build = 'make'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+if = "!has('nvim')"
+hook_add = '''
+'''
