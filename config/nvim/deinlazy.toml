@@ -26,6 +26,19 @@ if = "has('nvim')"
 on_ft = 'python'
 
 [[plugins]]
+repo = 'zchee/deoplete-go'
+depends = 'deoplete.nvim'
+if = "has('nvim')"
+on_ft = 'go'
+build = 'make'
+hook_source = '''
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#use_cache = 1
+let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/$GOOS_$GOARCH'
+'''
+
+[[plugins]]
 repo = 'ujihisa/neco-look'
 on_source = ['neocomplete.vim', 'deoplete.nvim']
 
@@ -68,6 +81,14 @@ on_ft = 'rust'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+hook_source = '''
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+'''
 
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'

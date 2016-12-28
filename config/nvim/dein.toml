@@ -170,6 +170,3 @@ build = 'make'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-if = "!has('nvim')"
-hook_add = '''
-'''
