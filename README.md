@@ -38,7 +38,9 @@ $ fisher install omf/theme-bobthefish
 
 - neovim/vim8
   - rust
-  - local eslint
+  - golang
+  - python3
+  - node.js(nvm)
 
 [Downloads · The Rust Programming Language](https://www.rust-lang.org/en-US/downloads.html "Downloads · The Rust Programming Language")からRustのソースコードを入手して"/usr/local/src"に配置。
 
@@ -47,6 +49,8 @@ $ fisher install omf/theme-bobthefish
 ```
 $ curl -sSf https://static.rust-lang.org/rustup.sh | sh
 $ cargo install racer
+$ pip3 install --upgrade jedi flake8 mypy-lang
+$ go get -u github.com/nsf/gocod
 ```
 
 # tmux

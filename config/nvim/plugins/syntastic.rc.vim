@@ -14,3 +14,5 @@ let g:syntastic_javascript_checkers = ['eslint']
 " for c/cpp
 let g:syntastic_cpp_include_dirs = ['src', '../src']
 let g:syntastic_cpp_compiler_options = '-Wall -D"_DEBUG"'
+" for Python
+let g:syntastic_python_checkers = ['python', 'flake8', 'mypy']

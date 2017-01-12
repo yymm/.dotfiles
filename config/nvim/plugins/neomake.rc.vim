@@ -20,3 +20,5 @@ let g:neomake_info_sign = {'text': 'ℹ➤', 'texthl': 'NeomakeInfoSign'}
 let g:neomake_cpp_enabled_makers = ['gcc']
 " eslint
 let g:neomake_javascript_enabled_makers = ['eslint']
+" for Python
+let g:neomake_python_enabled_makers = ['python', 'flake8', 'mypy']
