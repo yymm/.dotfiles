@@ -25,8 +25,14 @@ depends = 'deoplete.nvim'
 if = "has('nvim')"
 on_ft = 'python'
 hook_source = '''
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+if has('unix')
+  let g:python_host_prog = '/usr/bin/python2'
+  let g:python3_host_prog = '/usr/bin/python3'
+endif
+if has('mac')
+  let g:python_host_prog = '/usr/local/bin/python2'
+  let g:python3_host_prog = '/usr/local/bin/python3'
+endif
 '''
 
 [[plugins]]
@@ -51,7 +57,6 @@ repo = 'racer-rust/vim-racer'
 on_ft = 'rust'
 hook_source = '''
 let g:racer_cmd = "~/.cargo/bin/racer"
-let $RUST_SRC_PATH="/usr/local/src/rustc-1.13.0/src/"
 '''
 
 [[plugins]]

@@ -48,11 +48,13 @@ $ fisher install omf/theme-bobthefish
 
 ```
 $ curl -sSf https://static.rust-lang.org/rustup.sh | sh
+# (rustのソースコードを/usr/local/src/rust以下に配置)
 $ cargo install racer
 $ cargo install rustfmt
 $ pip3 install --upgrade jedi flake8 mypy-lang
-$ go get -u github.com/nsf/gocod
+$ go get -u github.com/nsf/gocode
 ```
+
 
 # tmux
 
