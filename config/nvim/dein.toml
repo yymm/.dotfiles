@@ -145,6 +145,15 @@ hook_add = '''
 let g:airline_theme='luna'
 '''
 
+[[plugins]]
+repo = 'gcmt/taboo.vim'
+depends = 'vim-airline'
+hook_add = '''
+"set guioptions-=e
+"set sessionoptions+=tabpages,globals
+let g:taboo_tab_format=' %N %f%m %w '
+'''
+
 # ==========================================================
 # terminal
 # ==========================================================

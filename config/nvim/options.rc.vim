@@ -24,7 +24,11 @@ else
   set backspace=indent,eol,start
 endif
 " visual tab
-autocmd MyAutoCmd ColorScheme * hi SpecialKey ctermfg=darkmagenta
+if has('unix')
+  autocmd MyAutoCmd ColorScheme * hi SpecialKey ctermfg=darkmagenta ctermbg=none
+else
+  autocmd MyAutoCmd ColorScheme * hi SpecialKey ctermfg=darkmagenta
+endif
 set list listchars=tab:¦_
 " highlighting zenkaku space
 autocmd MyAutoCmd BufRead,BufNew * match Error /　/

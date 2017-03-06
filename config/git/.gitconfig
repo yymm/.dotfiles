@@ -21,3 +21,4 @@ ft = fetch
 pl = pull
 co = checkout
 br = branch
+vdiff = git difftool --tool=vimdiff
