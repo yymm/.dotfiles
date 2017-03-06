@@ -145,3 +145,7 @@ on_ft = 'kotlin'
 [[plugins]]
 repo = 'keith/swift.vim'
 on_ft = 'swift'
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = 'vue'
