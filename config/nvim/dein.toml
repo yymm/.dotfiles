@@ -62,6 +62,13 @@ nmap <script> <silent> <C-q> :call ToggleQuickfixList()<CR> " Bug: not work in n
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
 
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+'''
+
 # ==========================================================
 # linter
 # ==========================================================
