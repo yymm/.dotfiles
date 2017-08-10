@@ -60,49 +60,17 @@ nmap <script> <silent> <C-q> :call ToggleQuickfixList()<CR> " Bug: not work in n
 '''
 
 [[plugins]]
-repo = 'kana/vim-operator-user'
-
-[[plugins]]
-repo = 'kana/vim-textobj-user'
-
-[[plugins]]
-repo = 'kana/vim-textobj-function'
-
-[[plugins]]
-repo = 'osyo-manga/vim-operator-search'
-depends = ['vim-operator-user', 'vim-textobj-function', 'vim-textobj-user']
-hook_add = '''
-nmap <Space>/ <Plug>(operator-search)if
-'''
+repo = 'terryma/vim-multiple-cursors'
 
 # ==========================================================
 # linter
 # ==========================================================
 
 [[plugins]]
-repo = 'neomake/neomake'
-if = "has('nvim')"
+repo = 'w0rp/ale'
 hook_add = '''
-source ~/.config/nvim/plugins/neomake.rc.vim
+source ~/.config/nvim/plugins/ale.rc.vim
 '''
-
-#[[plugins]]
-#repo = 'benjie/neomake-local-eslint.vim'
-#if = "has('nvim')"
-#depends = 'neomake'
-
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-if = "!has('nvim')"
-hook_add = '''
-source ~/.config/nvim/plugins/syntastic.rc.vim
-'''
-
-#[[plugins]]
-#repo = 'mtscout6/syntastic-local-eslint.vim'
-#if = "!has('nvim')"
-#depends = 'syntastic'
-#on_ft = 'javascript'
 
 # ==========================================================
 # filer

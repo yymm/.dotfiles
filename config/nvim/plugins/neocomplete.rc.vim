@@ -31,3 +31,10 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+" for multicursor
+function g:Multiple_cursors_before()
+  let g:neocomplete#disable_auto_complete = 1
+endfunction
+function g:Multiple_cursors_after()
+  let g:neocomplete#disable_auto_complete = 0
+endfunction
