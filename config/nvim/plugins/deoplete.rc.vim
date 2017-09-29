@@ -27,9 +27,9 @@ call deoplete#custom#set('_', 'converters', [
 
 let g:deoplete#enable_camel_case = 1
 " for multicursor
-function g:Multiple_cursors_before()
+function! g:Multiple_cursors_before()
   let g:deoplete#disable_auto_complete = 1
 endfunction
-function g:Multiple_cursors_after()
+function! g:Multiple_cursors_after()
   let g:deoplete#disable_auto_complete = 0
 endfunction

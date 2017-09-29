@@ -79,9 +79,9 @@ let g:racer_cmd = "~/.cargo/bin/racer"
 [[plugins]]
 repo = 'mhartington/nvim-typescript'
 depends = 'deoplete.nvim'
-on_ft = ['vue', 'typescript', 'javascript']
+on_ft = ['typescript']
 hook_source = '''
-let g:nvim_typescript#vue_support = 1
+"let g:nvim_typescript#vue_support = 1
 '''
 
 [[plugins]]
@@ -114,7 +114,6 @@ on_ft = ['c', 'cpp']
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim', 'vim-textobj-user']
 on_ft = ['vim', 'toml', 'markdown']
-
 
 # ==========================================================
 # lang
