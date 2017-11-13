@@ -29,7 +29,7 @@ on_source = ['neocomplete.vim', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/neco-syntax'
-on_source = ['neocomplete.vim', 'deoplete.nvim']
+on_source = ['neocomplete.vim', 'deoplete.nvim', 'nvim-completion-manager']
 
 [[plugins]]
 repo = 'Konfekt/FastFold'
@@ -68,26 +68,67 @@ let g:deoplete#sources#go#use_cache = 1
 let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/$GOOS_$GOARCH'
 '''
 
-[[plugins]]
-repo = 'racer-rust/vim-racer'
-depends = 'deoplete.nvim'
-on_ft = 'rust'
-hook_source = '''
-let g:racer_cmd = "~/.cargo/bin/racer"
-'''
+# [[plugins]]
+# repo = 'racer-rust/vim-racer'
+# depends = 'deoplete.nvim'
+# if = "has('nvim')"
+# on_ft = 'rust'
+# hook_source = '''
+# let g:racer_cmd = "~/.cargo/bin/racer"
+# "'''
 
-[[plugins]]
-repo = 'mhartington/nvim-typescript'
-depends = 'deoplete.nvim'
-on_ft = ['typescript']
-hook_source = '''
-"let g:nvim_typescript#vue_support = 1
-'''
+# [[plugins]]
+# repo = 'mhartington/nvim-typescript'
+# depends = 'deoplete.nvim'
+# if = "has('nvim')"
+# on_ft = 'typescript'
+# hook_source = '''
+# "let g:nvim_typescript#vue_support = 1
+# '''
 
 [[plugins]]
 repo = 'fszymanski/deoplete-emoji'
 depends = 'deoplete.nvim'
-on_ft = ['markdown']
+if = "has('nvim')"
+on_ft = 'markdown'
+
+# [[plugins]]
+# repo = 'roxma/nvim-completion-manager'
+# if = "has('nvim')"
+# on_ft = ['vue', 'rust']
+# hook_source = '''
+# set shortmess+=c
+# inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+# imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
+# imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-U>":"\<CR>")
+# inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+# inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+# '''
+# 
+# [[plugins]]
+# repo = 'Shougo/neosnippet'
+# depends = 'nvim-completion-manager'
+# on_ft = ['vue', 'rust']
+# hook_source = '''
+# '''
+# 
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# #depends = 'deoplete.nvim'
+# depends = 'nvim-completion-manager'
+# if = "has('nvim')"
+# on_ft = ['vue', 'rust']
+# hook_source = '''
+# set hidden
+# "set omnifunc=LanguageClient#complete
+# "set completefunc=LanguageClient#complete
+# call LanguageClient_setLoggingLevel('DEBUG')
+# let g:LanguageClient_serverCommands = {
+#     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+#     \ 'vue': ['vls'],
+#     \ }
+# let g:LanguageClient_autoStart = 1
+# '''
 
 # ==========================================================
 # block search and precious
@@ -113,7 +154,7 @@ on_ft = ['c', 'cpp']
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim', 'vim-textobj-user']
-on_ft = ['vim', 'toml', 'markdown']
+on_ft = ['vim', 'toml']
 
 # ==========================================================
 # lang

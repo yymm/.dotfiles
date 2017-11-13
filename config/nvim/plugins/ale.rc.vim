@@ -9,3 +9,7 @@ call ale#linter#Define('markdown', {
 \   'command': 'textlint -f unix %t',
 \   'callback': 'ale#handlers#unix#HandleAsError',
 \})
+
+let g:ale_linters = {
+\   'html': [],
+\}
