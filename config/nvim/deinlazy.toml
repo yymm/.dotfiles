@@ -69,15 +69,6 @@ let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/$GOOS_$GOARCH'
 '''
 
 # [[plugins]]
-# repo = 'racer-rust/vim-racer'
-# depends = 'deoplete.nvim'
-# if = "has('nvim')"
-# on_ft = 'rust'
-# hook_source = '''
-# let g:racer_cmd = "~/.cargo/bin/racer"
-# "'''
-
-# [[plugins]]
 # repo = 'mhartington/nvim-typescript'
 # depends = 'deoplete.nvim'
 # if = "has('nvim')"
@@ -111,24 +102,20 @@ on_ft = 'markdown'
 # on_ft = ['vue', 'rust']
 # hook_source = '''
 # '''
-# 
-# [[plugins]]
-# repo = 'autozimu/LanguageClient-neovim'
-# #depends = 'deoplete.nvim'
-# depends = 'nvim-completion-manager'
-# if = "has('nvim')"
-# on_ft = ['vue', 'rust']
-# hook_source = '''
-# set hidden
-# "set omnifunc=LanguageClient#complete
-# "set completefunc=LanguageClient#complete
-# call LanguageClient_setLoggingLevel('DEBUG')
-# let g:LanguageClient_serverCommands = {
-#     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-#     \ 'vue': ['vls'],
-#     \ }
-# let g:LanguageClient_autoStart = 1
-# '''
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+depends = 'deoplete.nvim'
+if = "has('nvim')"
+on_ft = ['rust']
+hook_source = '''
+set hidden
+"call LanguageClient_setLoggingLevel('DEBUG')
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
+let g:LanguageClient_autoStart = 1
+'''
 
 # ==========================================================
 # block search and precious
