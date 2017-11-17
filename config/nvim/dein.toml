@@ -34,9 +34,6 @@ source ~/.config/nvim/plugins/yankround.rc.vim
 '''
 
 [[plugins]]
-repo = 'mattn/webapi-vim'
-
-[[plugins]]
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
@@ -45,9 +42,6 @@ on_cmd = 'Vinarise'
 
 [[plugins]]
 repo = 'rhysd/clever-f.vim'
-
-[[plugins]]
-repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -60,14 +54,14 @@ nmap <script> <silent> <C-q> :call ToggleQuickfixList()<CR> " Bug: not work in n
 '''
 
 [[plugins]]
-repo = 'terryma/vim-multiple-cursors'
-
-[[plugins]]
 repo = 'junegunn/vim-easy-align'
 hook_add = '''
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 '''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 
 # ==========================================================
 # linter
@@ -99,9 +93,6 @@ source ~/.config/nvim/plugins/vimfiler.rc.vim
 # ==========================================================
 # powerline
 # ==========================================================
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'

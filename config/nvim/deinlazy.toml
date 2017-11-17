@@ -29,7 +29,7 @@ on_source = ['neocomplete.vim', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/neco-syntax'
-on_source = ['neocomplete.vim', 'deoplete.nvim', 'nvim-completion-manager']
+on_source = ['neocomplete.vim', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'Konfekt/FastFold'
@@ -38,6 +38,20 @@ on_source = ['neocomplete.vim', 'deoplete.nvim']
 [[plugins]]
 repo = 'Shougo/echodoc.vim'
 on_source = ['neocomplete.vim', 'deoplete.nvim']
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
+hook_source = '''
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#expand_word_boundary = 1
+'''
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
@@ -82,26 +96,6 @@ repo = 'fszymanski/deoplete-emoji'
 depends = 'deoplete.nvim'
 if = "has('nvim')"
 on_ft = 'markdown'
-
-# [[plugins]]
-# repo = 'roxma/nvim-completion-manager'
-# if = "has('nvim')"
-# on_ft = ['vue', 'rust']
-# hook_source = '''
-# set shortmess+=c
-# inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-# imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
-# imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-U>":"\<CR>")
-# inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-# inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-# '''
-# 
-# [[plugins]]
-# repo = 'Shougo/neosnippet'
-# depends = 'nvim-completion-manager'
-# on_ft = ['vue', 'rust']
-# hook_source = '''
-# '''
 
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
@@ -161,6 +155,10 @@ on_ft = ['c', 'cpp']
 
 [[plugins]]
 repo = 'vim-jp/cpp-vim'
+on_ft = ['c', 'cpp']
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
 on_ft = ['c', 'cpp']
 
 [[plugins]]
