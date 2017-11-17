@@ -37,10 +37,6 @@ source ~/.config/nvim/plugins/yankround.rc.vim
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
-repo = 'Shougo/vinarise.vim'
-on_cmd = 'Vinarise'
-
-[[plugins]]
 repo = 'rhysd/clever-f.vim'
 
 [[plugins]]
@@ -62,6 +58,19 @@ nmap ga <Plug>(EasyAlign)
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'haya14busa/incsearch.vim'
+if = "!has('nvim')"
+hook_add = '''
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+
 
 # ==========================================================
 # linter
@@ -115,8 +124,10 @@ let g:airline_theme='luna'
 repo = 'gcmt/taboo.vim'
 depends = 'vim-airline'
 hook_add = '''
-"set guioptions-=e
-"set sessionoptions+=tabpages,globals
+if !has('nvim')
+  set guioptions-=e
+  set sessionoptions+=tabpages,globals
+endif
 let g:taboo_tab_format=' t%N %f%m '
 let g:taboo_tabline = 0
 '''
