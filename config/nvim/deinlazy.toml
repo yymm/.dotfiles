@@ -101,11 +101,12 @@ on_ft = 'markdown'
 repo = 'autozimu/LanguageClient-neovim'
 depends = 'deoplete.nvim'
 if = "has('nvim')"
-on_ft = ['rust']
+on_ft = ['rust', 'vue']
 hook_source = '''
 set hidden
 "call LanguageClient_setLoggingLevel('DEBUG')
 let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 let g:LanguageClient_autoStart = 1
@@ -231,6 +232,28 @@ on_ft = 'swift'
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = 'vue'
+hook_add = '''
+autocmd FileType vue syntax sync fromstart
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
+'''
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
