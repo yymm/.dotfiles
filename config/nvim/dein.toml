@@ -148,3 +148,34 @@ build = 'make'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
+# ==========================================================
+# for vim8 compatible neovim
+# ==========================================================
+
+[[plugins]]
+repo = "roxma/vim-hug-neovim-rpc"
+if = "!has('nvim')"
+
+[[plugins]]
+repo = "roxma/nvim-yarp"
+if = "!has('nvim')"
+
+# ==========================================================
+# LSP
+# ==========================================================
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls'],
+    \ 'rust': ['rls'],
+    \ }
+'''
+
+# [[plugins]]
+# repo = 'Shougo/context_filetype.vim'

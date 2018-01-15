@@ -1,57 +1,33 @@
 # ==========================================================
-# completion
+# completion engine
 # ==========================================================
 
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-if = "has('nvim')"
 on_i = 1
-hook_source = '''
+hook_add = '''
 source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
 
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-depends = 'context_filetype.vim'
-if = "has('lua')"
-on_i = 1
-hook_source = '''
-source ~/.config/nvim/plugins/neocomplete.rc.vim
-'''
+# ==========================================================
+# completion plugins
+# ==========================================================
 
 [[plugins]]
 repo = 'ujihisa/neco-look'
-on_source = ['neocomplete.vim', 'deoplete.nvim']
+on_source = ['deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/neco-syntax'
-on_source = ['neocomplete.vim', 'deoplete.nvim']
+on_source = ['deoplete.nvim']
 
 [[plugins]]
 repo = 'Konfekt/FastFold'
-on_source = ['neocomplete.vim', 'deoplete.nvim']
+on_source = ['deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/echodoc.vim'
-on_source = ['neocomplete.vim', 'deoplete.nvim']
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_event = 'InsertCharPre'
-on_ft = 'snippet'
-hook_source = '''
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#enable_completed_snippet = 1
-let g:neosnippet#expand_word_boundary = 1
-'''
+on_source = ['deoplete.nvim']
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
@@ -72,7 +48,6 @@ endif
 [[plugins]]
 repo = 'zchee/deoplete-go'
 depends = 'deoplete.nvim'
-if = "has('nvim')"
 on_ft = 'go'
 build = 'make'
 hook_source = '''
@@ -82,34 +57,26 @@ let g:deoplete#sources#go#use_cache = 1
 let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/$GOOS_$GOARCH'
 '''
 
-# [[plugins]]
-# repo = 'mhartington/nvim-typescript'
-# depends = 'deoplete.nvim'
-# if = "has('nvim')"
-# on_ft = 'typescript'
-# hook_source = '''
-# "let g:nvim_typescript#vue_support = 1
-# '''
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+depends = 'deoplete.nvim'
+on_ft = 'typescript'
 
 [[plugins]]
 repo = 'fszymanski/deoplete-emoji'
 depends = 'deoplete.nvim'
-if = "has('nvim')"
 on_ft = 'markdown'
 
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-depends = 'deoplete.nvim'
-if = "has('nvim')"
-on_ft = ['rust', 'vue']
-hook_source = '''
-set hidden
-"call LanguageClient_setLoggingLevel('DEBUG')
-let g:LanguageClient_serverCommands = {
-    \ 'vue': ['vls'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
-let g:LanguageClient_autoStart = 1
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets']
+hook_add = '''
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#expand_word_boundary = 1
 '''
 
 # ==========================================================
@@ -132,11 +99,6 @@ hook_add = '''
 nmap <Space>/ <Plug>(operator-search)if
 '''
 on_ft = ['c', 'cpp']
-
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim', 'vim-textobj-user']
-on_ft = ['vim', 'toml']
 
 # ==========================================================
 # lang
@@ -233,6 +195,8 @@ on_ft = 'swift'
 repo = 'posva/vim-vue'
 on_ft = 'vue'
 hook_add = '''
+setlocal iskeyword+=$
+setlocal iskeyword+=-
 autocmd FileType vue syntax sync fromstart
 let g:ft = ''
 function! NERDCommenter_before()
