@@ -26,10 +26,6 @@ repo = 'Konfekt/FastFold'
 on_source = ['deoplete.nvim']
 
 [[plugins]]
-repo = 'Shougo/echodoc.vim'
-on_source = ['deoplete.nvim']
-
-[[plugins]]
 repo = 'zchee/deoplete-jedi'
 depends = 'deoplete.nvim'
 if = "has('nvim')"
