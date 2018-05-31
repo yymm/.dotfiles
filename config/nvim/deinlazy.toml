@@ -9,6 +9,19 @@ hook_add = '''
 source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
 
+# [[plugins]]
+# repo = 'roxma/nvim-completion-manager'
+# on_i = 1
+# hook_add = '''
+# set shortmess+=c
+# inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+# imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
+# imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-U>":"\<CR>")
+# inoremap <c-c> <ESC>
+# inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+# inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+# '''
+
 # ==========================================================
 # completion plugins
 # ==========================================================
@@ -53,10 +66,10 @@ let g:deoplete#sources#go#use_cache = 1
 let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/$GOOS_$GOARCH'
 '''
 
-[[plugins]]
-repo = 'mhartington/nvim-typescript'
-depends = 'deoplete.nvim'
-on_ft = 'typescript'
+# [[plugins]]
+# repo = 'mhartington/nvim-typescript'
+# depends = 'deoplete.nvim'
+# on_ft = 'typescript'
 
 [[plugins]]
 repo = 'fszymanski/deoplete-emoji'
@@ -156,7 +169,7 @@ repo = 'mxw/vim-jsx'
 on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
-repo = 'leafgarland/typescript-vim'
+repo = 'HerringtonDarkholme/yats.vim'
 on_ft = 'typescript'
 
 [[plugins]]
@@ -191,9 +204,9 @@ on_ft = 'swift'
 repo = 'posva/vim-vue'
 on_ft = 'vue'
 hook_add = '''
-setlocal iskeyword+=$
-setlocal iskeyword+=-
-autocmd FileType vue syntax sync fromstart
+set iskeyword+=$
+set iskeyword+=-
+autocmd MyAutoCmd FileType vue syntax sync fromstart
 let g:ft = ''
 function! NERDCommenter_before()
   if &ft == 'vue'

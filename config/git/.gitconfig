@@ -1,8 +1,8 @@
 [user]
 email = yuya.yano.6260@gmail.com
 name = yuya yano
-[core]
-	editor = /Applications/MacVim.app/Contents/MacOS/Vim
+# [core]
+# editor = /Applications/MacVim.app/Contents/MacOS/Vim
 [color]
 # colorの設定(以下のコマンドは自動で色つける)
 status = auto
@@ -13,8 +13,8 @@ grep = auto
 [alias]
 cm = commit -m
 st = status --short --branch
-tl = log --graph --decorate --oneline
-glog = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+ntl = log --graph --decorate --oneline --name-status
+tl = log --graph --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(cyan)%d %Creset%s %Cblue[%cn]'
 alog = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
 po = push origin
 ft = fetch
