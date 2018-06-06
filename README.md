@@ -1,70 +1,23 @@
+Target: Ubuntu, Mac, Linux Server(Ubuntu, CentOS, Fedora, etc...)
+
+# Tools
+- git
 - fish
   - fisherman
 - tmux
   - tmux-powerline
-- neovim/vim8
+    - tmux-cpu-men-load
+- neovim/vim
 - nyaovim
-- git
-- vimperator
 
+# Requirements
+- [fisherman](https://github.com/fisherman/fisherman)
+   - `curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher` (input on fish)
+   - `fisher omf/theme-bobthefish edc/bass nvm`
+- [tmux-powerline](https://github.com/erikw/tmux-powerline)
+  - `git clone https://github.com/erikw/tmux-powerline.git ~/.tmux-powerline`
+- [tmux-men-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load) (require: cmake)
 ```
-$ sudo apt-get install git fish tmux
-$ sudo apt-get install software-properties-common
-$ sudo add-apt-repository ppa:neovim-ppa/unstable
-$ sudo apt-get update
-$ sudo apt-get install neovim
-$ sudo apt-get install python-dev python-pip python3-dev python3-pip
-$ pip2 install --user --upgrade neovim
-$ pip3 install --user --upgrade neovim
-```
-
-# Dependency
-
-## fish
-
-- fish
-  - fisherman
-    - nvm
-    - omf/theme-bobthefish
-
-```
-$ curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-$ fisher install nvm
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
-$ fisher install omf/theme-bobthefish
-```
-
-## vim
-
-- neovim/vim8
-  - rust
-  - golang
-  - python3
-  - node.js(nvm)
-
-[Downloads · The Rust Programming Language](https://www.rust-lang.org/en-US/downloads.html "Downloads · The Rust Programming Language")からRustのソースコードを入手して"/usr/local/src"に配置。
-
-(注: vimの設定とパスを合わせる必要あり)
-
-```
-$ curl -sSf https://static.rust-lang.org/rustup.sh | sh
-# (rustのソースコードを/usr/local/src/rust以下に配置)
-$ cargo install racer
-$ cargo install rustfmt
-$ pip3 install --upgrade jedi flake8 mypy-lang
-$ go get -u github.com/nsf/gocode
-```
-
-
-# tmux
-
-- tmux
-  - thewtex/tmux-cpu-mem-load
-    - cmake
-
-```
-$ sudo apt install cmake
-$ cd Downloads
 $ git clone https://github.com/thewtex/tmux-mem-cpu-load.git
 $ cd tmux-mem-cpu-load
 $ cmake .

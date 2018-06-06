@@ -78,17 +78,13 @@ source ~/.config/nvim/plugins/ale.rc.vim
 # ==========================================================
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
+repo = 'scrooloose/nerdtree'
 hook_add = '''
-nnoremap <silent> fb :<C-u>Unite buffer<CR>
+map <C-e> :NERDTreeToggle<CR>
 '''
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-depends = 'unite.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/vimfiler.rc.vim
-'''
+repo = 'Xuyuanp/nerdtree-git-plugin'
 
 # ==========================================================
 # powerline
