@@ -170,6 +170,7 @@ merged = 0
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 hook_add = '''
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 map <C-s> :FZF<CR>
 '''
 
