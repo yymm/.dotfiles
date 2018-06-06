@@ -63,4 +63,4 @@ let g:loaded_matchit           = 1
 " for Lang
 "
 autocmd MyAutoCmd FileType fortran set colorcolumn=5
-autocmd MyAutoCmd FileType cpp set ts=4 sts=0 sw=4 noet
+"autocmd MyAutoCmd FileType cpp set ts=4 sts=0 sw=4 noet

@@ -170,16 +170,8 @@ merged = 0
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 hook_add = '''
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 map <C-s> :FZF<CR>
 '''
-
-# ==========================================================
-# Auto Format
-# ==========================================================
-
-[[plugins]]
-repo = 'Chiel92/vim-autoformat'
 
 # ==========================================================
 # LSP
@@ -206,7 +198,13 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-nnoremap <silent> <F3> :call LanguageClient_textDocument_formatting()
+nnoremap <silent> <F3> :call LanguageClient#textDocument_formatting()<CR>
+
+function! Format()
+  call LanguageClient#textDocument_formatting()
+  sleep 50m
+endfunction
+au BufWrite *.cpp call Format()
 '''
 
 #[[plugins]]
