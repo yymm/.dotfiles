@@ -1,5 +1,9 @@
 Target: Ubuntu, Mac, Linux Server(Ubuntu, CentOS, Fedora, etc...)
 
+# Start
+1. Install packages and tools
+2. `cd .dotfiles && python3 bin/bootstrap.py`
+
 # Tools
 - git
 - fish

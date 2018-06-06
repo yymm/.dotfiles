@@ -32,9 +32,9 @@ fi
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
 		"tmux_mem_cpu_load 24 231" \
-		"date_day 30 231" \
-		"date 30 231 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
-		"time 30 231 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		#"date_day 30 231" \
+		#"date 30 231 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		#"time 30 231 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 		#"ifstat_sys 36 59" \
 	)
 fi

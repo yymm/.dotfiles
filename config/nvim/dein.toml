@@ -164,7 +164,7 @@ if = "!has('nvim')"
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
 build = 'bash install.sh'
-rev = '0.1.43'
+rev = 'next'
 hook_add = '''
 set hidden
 let g:LanguageClient_serverCommands = {
@@ -173,12 +173,16 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'cpp': ['clangd-6.0'],
+    \ 'cpp': ['clangd'],
     \ }
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-nnoremap <silent> FO :call LanguageClient_textDocument_formatting()
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+nnoremap <silent> <F3> :call LanguageClient_textDocument_formatting()
 '''
 
 #[[plugins]]

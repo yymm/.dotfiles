@@ -4,16 +4,14 @@ if type -q nvim
   set -x XDG_CONFIG_HOME $HOME/.config
 end
 
-if type -q go
-  set -x GOPATH $HOME/Documents/Go
-end
+set -x GOPATH $HOME/Documents/Go
 
-if type -q rustc
+if test -d $HOME/.cargo
   set -x PATH $HOME/.cargo/bin $PATH
   set -x RUST_SRC_PATH /usr/local/src/rust/src
 end
 
-if type -q conda
+if test -d $HOME/miniconda3
   set -x PATH $HOME/miniconda3/bin $PATH
   source (conda info --root)/etc/fish/conf.d/conda.fish
 end
