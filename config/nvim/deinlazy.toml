@@ -77,6 +77,16 @@ depends = 'deoplete.nvim'
 on_ft = 'markdown'
 
 [[plugins]]
+repo = 'tweekmonster/deoplete-clang2'
+depends = 'deoplete.nvim'
+on_ft = ['c', 'cpp']
+hook_source = '''
+nnoremap <silent> ctd :!clang-tidy % -fix -checks="readability-braces-around-statements"<CR>
+let g:clang2_placeholder_prev = '<C-n>'
+let g:clang2_placeholder_next = '<C-k>'
+'''
+
+[[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets']
 hook_add = '''
@@ -132,6 +142,9 @@ on_ft = ['c', 'cpp']
 [[plugins]]
 repo = 'majutsushi/tagbar'
 on_ft = ['c', 'cpp']
+hook_add = '''
+nmap <F4> :TagbarToggle<CR>
+'''
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'

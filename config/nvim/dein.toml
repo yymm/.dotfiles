@@ -62,6 +62,15 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'osyo-manga/vim-over'
 
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+'''
 
 # ==========================================================
 # linter
@@ -190,7 +199,6 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'cpp': ['clangd'],
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -198,14 +206,7 @@ nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
 nnoremap <silent> <F3> :call LanguageClient#textDocument_formatting()<CR>
-
-function! Format()
-  call LanguageClient#textDocument_formatting()
-  sleep 50m
-endfunction
-au BufWrite *.cpp call Format()
 '''
 
 #[[plugins]]

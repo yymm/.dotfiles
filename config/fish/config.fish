@@ -6,7 +6,9 @@ if type -q nvim
   set -x XDG_CONFIG_HOME $HOME/.config
 end
 
-set -x GOPATH $HOME/Documents/Go
+if type -q go
+  set -x GOPATH $HOME/.go
+end
 
 if test -d $HOME/.cargo
   set -x PATH $HOME/.cargo/bin $PATH

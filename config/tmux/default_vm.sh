@@ -25,7 +25,7 @@ if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
 		"hostname 36 231" \
 		"lan_ip 30 231" \
-		"wan_ip 24 231" \
+		#"wan_ip 24 231" \
 	)
 fi
 
