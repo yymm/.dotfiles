@@ -9,6 +9,14 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'cpp': ['clang-format'],
+\   'vue': ['prettier', 'eslint'],
+\   'javascript': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'eslint'],
+\   'json': ['prettier'],
+\   'css': ['prettier'],
+\   'less': ['prettier'],
+\   'scss': ['prettier'],
+\   'python': ['autopep8'],
 \}
 
 let g:ale_fix_on_save = 1
