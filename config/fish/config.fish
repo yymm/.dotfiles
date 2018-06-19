@@ -12,7 +12,7 @@ end
 
 if test -d $HOME/.cargo
   set -x PATH $HOME/.cargo/bin $PATH
-  set -x RUST_SRC_PATH /usr/local/src/rust/src
+  set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 end
 
 if test -d $HOME/miniconda3

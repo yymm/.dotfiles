@@ -66,10 +66,14 @@ let g:deoplete#sources#go#use_cache = 1
 let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/$GOOS_$GOARCH'
 '''
 
-# [[plugins]]
-# repo = 'mhartington/nvim-typescript'
-# depends = 'deoplete.nvim'
-# on_ft = 'typescript'
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+depends = 'deoplete.nvim'
+build = './install.sh'
+on_ft = ['javascript', 'typescript']
+hook_source = '''
+let g:nvim_typescript#javascript_support = 1
+'''
 
 [[plugins]]
 repo = 'fszymanski/deoplete-emoji'

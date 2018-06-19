@@ -196,9 +196,6 @@ set hidden
 let g:LanguageClient_serverCommands = {
     \ 'vue': ['vls'],
     \ 'rust': ['rls'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
