@@ -8,6 +8,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
+\   'c': ['clang-format'],
 \   'cpp': ['clang-format'],
 \   'vue': ['prettier', 'eslint'],
 \   'javascript': ['prettier', 'eslint'],
