@@ -17,3 +17,5 @@ po = push origin
 co = checkout
 br = branch
 vdiff = git difftool --tool=vimdiff
+[core]
+editor = nvim
