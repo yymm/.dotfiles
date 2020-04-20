@@ -247,6 +247,8 @@ repo = 'autozimu/LanguageClient-neovim'
 build = 'bash install.sh'
 rev = 'next'
 hook_add = '''
+let g:LanguageClient_loadSettings=1
+let g:LanguageClient_settingsPath='~/.config/nvim/settings.json'
 set hidden
 let g:LanguageClient_serverCommands = {
     \ 'vue': ['vls'],

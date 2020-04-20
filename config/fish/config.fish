@@ -29,6 +29,15 @@ if test -d /usr/local/opt/avr-gcc@7
   set -g fish_user_paths "/usr/local/opt/avr-gcc@7/bin" $fish_user_paths
 end
 
+if test -d $HOME/.yarn
+  set -Ux fish_user_paths (yarn global bin) $fish_user_paths
+end
+
+if test -d $HOME/.nodenv
+  set -Ux fish_user_paths $HOME/.nodenv/bin $fish_user_paths
+  status --is-interactive; and source (nodenv init -|psub)
+end
+
 #
 # Functions
 #
