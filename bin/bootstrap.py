@@ -14,7 +14,8 @@ def vim():
     if not os.path.exists(os.environ['HOME'] +  '/.vim'):
         os.mkdir(os.environ['HOME'] +  '/.vim')
     # neovim
-    os.system('ln -nsf ~/.dotfiles/config/nvim ~/.config/')
+    # os.system('ln -nsf ~/.dotfiles/config/nvim ~/.config/')
+    os.system('ln -nsf ~/.dotfiles/config/nvim-next ~/.config/nvim')
     # vim
     os.system('ln -sf ~/.dotfiles/config/nvim/init.vim ~/.vimrc')
     os.system('ln -sf ~/.dotfiles/config/nvim/options.rc.vim ~/.vim/')
@@ -83,6 +84,6 @@ if '__main__' == __name__:
     fish()
     vim()
     tmux()
-    if linux == 'Ubuntu':
-        nyaovim()
-        font()
+    # if linux == 'Ubuntu':
+    #     nyaovim()
+    #     font()

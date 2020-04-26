@@ -2,7 +2,7 @@
 # Configs
 #
 
-set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
+set -x fish_user_paths $HOME/.local/bin $fish_user_paths
 
 if test -f /etc/lsb-release
   set -g theme_color_scheme zenburn
@@ -13,8 +13,8 @@ if type -q nvim
 end
 
 if type -q go
-  set -Ux GOPATH $HOME/go
-  set -Ux fish_user_paths $GOPATH/bin $fish_user_paths
+  set -x GOPATH $HOME/go
+  set -x fish_user_paths $GOPATH/bin $fish_user_paths
 end
 
 if test -d $HOME/.cargo
@@ -31,13 +31,13 @@ if test -d /usr/local/opt/avr-gcc@7
   set -g fish_user_paths "/usr/local/opt/avr-gcc@7/bin" $fish_user_paths
 end
 
-if test -d $HOME/.yarn
-  set -Ux fish_user_paths (yarn global bin) $fish_user_paths
+if test -d $HOME/.nodenv
+  set -x fish_user_paths $HOME/.nodenv/bin $fish_user_paths
+  status --is-interactive; and source (nodenv init -|psub)
 end
 
-if test -d $HOME/.nodenv
-  set -Ux fish_user_paths $HOME/.nodenv/bin $fish_user_paths
-  status --is-interactive; and source (nodenv init -|psub)
+if test -d $HOME/.yarn
+  set -x fish_user_paths $HOME/.yarn/bin $fish_user_paths
 end
 
 #
