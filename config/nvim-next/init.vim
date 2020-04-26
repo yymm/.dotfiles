@@ -1,7 +1,15 @@
+if &compatible
+  set nocompatible
+endif
+
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'cocopon/iceberg.vim'
-Plug 'romainl/flattened'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdcommenter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'osyo-manga/vim-over'
@@ -10,7 +18,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kassio/neoterm'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -61,3 +68,4 @@ runtime! plugins/main.vim
 runtime! plugins/colorscheme.vim
 runtime! plugins/lang.vim
 runtime! plugins/lsp.vim
+runtime! plugins/lint.vim

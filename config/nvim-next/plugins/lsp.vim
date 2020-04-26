@@ -3,13 +3,15 @@
 "
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+let g:lsp_diagnostics_enabled = 0
+
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
     \ 'name': 'emoji',
-    \ 'whitelist': ['*'],
+    \ 'whitelist': ['text', 'markdown'],
     \ 'completor': function('asyncomplete#sources#emoji#completor'),
     \ }))
 
@@ -20,15 +22,15 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
     \ 'completor': function('asyncomplete#sources#file#completor')
     \ }))
 
-" call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-"     \ 'name': 'buffer',
-"     \ 'whitelist': ['*'],
-"     \ 'blacklist': ['go', 'rust'],
-"     \ 'completor': function('asyncomplete#sources#buffer#completor'),
-"     \ 'config': {
-"     \    'max_buffer_size': 5000000,
-"     \  },
-"     \ }))
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go', 'rust'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
 
 "
 " vim-lsp
@@ -50,8 +52,6 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-
-" let g:lsp_diagnostics_enabled = 0
 
 if executable('rls')
     " pip install python-language-server

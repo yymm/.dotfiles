@@ -50,7 +50,13 @@
 "
 " neomake
 "
-call neomake#configure#automake('w')
+" call neomake#configure#automake('nrwi', 500)
+call neomake#configure#automake({
+  \ 'TextChanged': {},
+  \ 'InsertLeave': {'delay': 0},
+  \ 'BufWritePost': {'delay': 0},
+  \ 'BufWinEnter': {},
+  \ }, 500)
 " ColorScheme
 " autocmd MyAutoCmd VimEnter * highlight SignColumn ctermbg=237
 " autocmd MyAutoCmd ColorScheme * hi NeomakeErrorSign cterm=bold ctermfg=255 ctermbg=203
