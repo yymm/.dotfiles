@@ -35,9 +35,10 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
 "
 " vim-lsp
 "
-set foldmethod=expr
-  \ foldexpr=lsp#ui#vim#folding#foldexpr()
-  \ foldtext=lsp#ui#vim#folding#foldtext()
+" set foldmethod=expr
+"   \ foldexpr=lsp#ui#vim#folding#foldexpr()
+"   \ foldtext=lsp#ui#vim#folding#foldtext()
+let g:lsp_fold_enabled = 0
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
@@ -69,8 +70,15 @@ if executable('vls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'vue language server',
         \ 'cmd': {server_info->['vls']},
-        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
         \ 'whitelist': ['vue'],
+        \ 'initialization_options': {
+        \         'config': {
+        \             'html': {},
+        \              'vetur': {
+        \                  'validation': {}
+        \              }
+        \         }
+        \     }
         \ })
 endif
 
@@ -78,7 +86,6 @@ if executable('typescript-language-server')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'javascript support using typescript-language-server',
         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
         \ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript', 'typescript.tsx'],
         \ })
 endif
@@ -101,15 +108,13 @@ if executable('pyls')
 endif
 
 "
-" Ultisnip
+" neosnippet
 "
-if has('python3')
-    let g:UltiSnipsExpandTrigger="<c-k>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-    call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-        \ 'name': 'ultisnips',
-        \ 'whitelist': ['*'],
-        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-        \ }))
-endif
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+    \ 'name': 'neosnippet',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+    \ }))

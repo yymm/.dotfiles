@@ -40,11 +40,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-emoji.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
-if has('python3')
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
-endif
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
 
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -52,6 +50,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'posva/vim-vue'
 Plug 'elzr/vim-json'
 Plug 'rhysd/vim-gfm-syntax'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
