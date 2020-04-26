@@ -2,6 +2,8 @@
 # Configs
 #
 
+set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
+
 if test -f /etc/lsb-release
   set -g theme_color_scheme zenburn
 end
@@ -11,8 +13,8 @@ if type -q nvim
 end
 
 if type -q go
-  set -x GOPATH $HOME/go
-  set -x PATH $GOPATH/bin $PATH
+  set -Ux GOPATH $HOME/go
+  set -Ux fish_user_paths $GOPATH/bin $fish_user_paths
 end
 
 if test -d $HOME/.cargo
