@@ -27,6 +27,8 @@ Plug 'mattn/emmet-vim'
 Plug 'majutsushi/tagbar'
 Plug 'osyo-manga/vim-anzu'
 Plug 'neomake/neomake'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
