@@ -9,7 +9,8 @@ end
 if test -f /etc/lsb-release
   set -g theme_color_scheme zenburn
 else
-  set -g theme_color_scheme gruvbox
+  set -g theme_color_scheme zenburn # metro
+  # set -g theme_color_scheme gruvbox # bobthefish
 end
 
 if type -q nvim
@@ -35,9 +36,15 @@ if test -d /usr/local/opt/avr-gcc@7
   set -g fish_user_paths "/usr/local/opt/avr-gcc@7/bin" $fish_user_paths
 end
 
-if test -d $HOME/.nodenv
-  set -x fish_user_paths $HOME/.nodenv/bin $fish_user_paths
-  status --is-interactive; and source (nodenv init -|psub)
+if test -f /etc/lsb-release
+  if test -d $HOME/.nodenv
+    set -x fish_user_paths $HOME/.nodenv/bin $fish_user_paths
+    status --is-interactive; and source (nodenv init -|psub)
+  end
+else
+  if type -q nodenv
+    status --is-interactive; and source (nodenv init -|psub)
+  end
 end
 
 if test -d $HOME/.yarn
