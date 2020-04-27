@@ -6,6 +6,8 @@ set -x fish_user_paths $HOME/.local/bin $fish_user_paths
 
 if test -f /etc/lsb-release
   set -g theme_color_scheme zenburn
+else
+  set -g theme_color_scheme gruvbox
 end
 
 if type -q nvim
