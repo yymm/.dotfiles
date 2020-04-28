@@ -1,28 +1,4 @@
 "
-" vim-vue
-"
-autocmd MyAutoCmd FileType vue syntax sync fromstart
-let g:ft = ''
-function! NERDCommenter_before()
-  if &ft == 'vue'
-    let g:ft = 'vue'
-    let stack = synstack(line('.'), col('.'))
-    if len(stack) > 0
-      let syn = synIDattr((stack)[0], 'name')
-      if len(syn) > 0
-        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
-      endif
-    endif
-  endif
-endfunction
-function! NERDCommenter_after()
-  if g:ft == 'vue'
-    setf vue
-    let g:ft = ''
-  endif
-endfunction
-
-"
 " vim-go
 "
 let g:go_highlight_functions = 1
@@ -42,3 +18,11 @@ let g:rustfmt_autosave = 1
 " vim-prettier
 "
 let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:neomake_vue_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_typescript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_tsx_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_jsx_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_typescriptreact_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_javascriptreact_eslint_exe = $PWD .'/node_modules/.bin/eslint'

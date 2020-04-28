@@ -22,16 +22,21 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
     \ 'completor': function('asyncomplete#sources#file#completor')
     \ }))
 
-call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
     \ 'name': 'buffer',
     \ 'whitelist': ['*'],
-    \ 'blacklist': ['go', 'rust'],
+    "\ 'blacklist': ['go', 'rust'],
     \ 'completor': function('asyncomplete#sources#buffer#completor'),
     \ 'config': {
     \    'max_buffer_size': 5000000,
     \  },
     \ }))
 
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necovim#get_source_options({
+    \ 'name': 'neco-vim',
+    \ 'whitelist': ['vim'],
+    \ 'completor': function('asyncomplete#sources#necovim#completor'),
+    \ }))
 "
 " vim-lsp
 "

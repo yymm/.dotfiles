@@ -10,7 +10,8 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tyru/caw.vim'
+Plug 'Shougo/context_filetype.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'osyo-manga/vim-over'
 Plug 'jiangmiao/auto-pairs'
@@ -41,6 +42,8 @@ Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
+Plug 'Shougo/neco-vim'
+Plug 'prabirshrestha/asyncomplete-necovim.vim'
 
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
