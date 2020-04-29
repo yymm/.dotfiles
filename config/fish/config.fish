@@ -2,6 +2,10 @@
 # Configs
 #
 
+if test (uname -s) = Darwin
+  set -x LANG ja_JP.UTF-8
+end
+
 if test -f /etc/lsb-release
   set -x fish_user_paths $HOME/.local/bin $fish_user_paths
 end
