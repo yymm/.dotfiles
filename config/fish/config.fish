@@ -47,7 +47,7 @@ if test -f /etc/lsb-release
   end
 else
   if type -q nodenv
-    status --is-interactive; and source (nodenv init -|psub)
+    eval (nodenv init - | source)
   end
 end
 

@@ -26,6 +26,9 @@ let g:neomake_tsx_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 let g:neomake_jsx_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 let g:neomake_typescriptreact_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 let g:neomake_javascriptreact_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_vue_stylelint_exe = $PWD .'/node_modules/.bin/stylelint'
+let g:neomake_css_stylelint_exe = $PWD .'/node_modules/.bin/stylelint'
+let g:neomake_scss_stylelint_exe = $PWD .'/node_modules/.bin/stylelint'
 
 "
 " vim-vue-plugin
