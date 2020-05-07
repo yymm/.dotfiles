@@ -55,43 +55,4 @@ if test -d $HOME/.yarn
   set -x fish_user_paths $HOME/.yarn/bin $fish_user_paths
 end
 
-#
-# Functions
-#
-
-function confirm
-  while true
-    read -l -P "$argv[1] [y/N] " confirm
-    switch $confirm
-      case Y y
-        return 0
-      case '' N n
-        return 1
-    end
-  end
-end
-
-# override "cd" command
-function cd --description 'check git repo and fetch, startup.sh is exist then run it'
-  builtin cd $argv[1]
-  #if __fish_is_git_repository
-  #  if confirm "git fetch?"
-  #    echo "☕ auto git fetch"
-  #    git fetch origin master
-  #  end
-  #end
-  if test -x startup.fish
-    echo "🚀 run startup.fish"
-    ./startup.fish
-  end
-  if test -x startup.sh
-    echo "🚀 run startup.sh"
-    ./startup.sh
-  end
-end
-
-#
-# Alias
-#
-
 alias dco="docker-compose"
