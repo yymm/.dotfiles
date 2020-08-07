@@ -75,3 +75,31 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+"
+" sqls
+"
+if executable('sqls')
+    augroup LspSqls
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+        \   'name': 'sqls',
+        \   'cmd': {server_info->['sqls']},
+        \   'whitelist': ['sql'],
+        \   'workspace_config': {
+        \     'sqls': {
+        \       'connections': [
+        \         {
+        \           'driver': 'mysql',
+        \           'dataSourceName': 'root:root@tcp(127.0.0.1:13306)/world',
+        \         },
+        \         {
+        \           'driver': 'postgresql',
+        \           'dataSourceName': 'host=127.0.0.1 port=55432 user=postgres password=example dbname=development sslmode=disable',
+        \         },
+        \       ],
+        \     },
+        \   },
+        \ })
+    augroup END
+endif

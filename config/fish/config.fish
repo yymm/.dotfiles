@@ -4,10 +4,11 @@
 
 if test (uname -s) = Darwin
   set -x LANG ja_JP.UTF-8
+  set -x PATH $HOME/.local/bin $PATH
 end
 
 if test -f /etc/lsb-release
-  set -x fish_user_paths $HOME/.local/bin $fish_user_paths
+  set -x PATH $HOME/.local/bin $PATH
 end
 
 if test -f /etc/lsb-release
@@ -23,7 +24,7 @@ end
 
 if type -q go
   set -x GOPATH $HOME/go
-  set -x fish_user_paths $GOPATH/bin $fish_user_paths
+  set -x PATH $GOPATH/bin $PATH
 end
 
 if test -d $HOME/.cargo
@@ -37,12 +38,12 @@ if test -d $HOME/miniconda3
 end
 
 if test -d /usr/local/opt/avr-gcc@7
-  set -g fish_user_paths "/usr/local/opt/avr-gcc@7/bin" $fish_user_paths
+  set -x PATH "/usr/local/opt/avr-gcc@7/bin" $PATH
 end
 
 if test -f /etc/lsb-release
   if test -d $HOME/.nodenv
-    set -x fish_user_paths $HOME/.nodenv/bin $fish_user_paths
+    set -x PATH $HOME/.nodenv/bin $PATH
     status --is-interactive; and source (nodenv init -|psub)
   end
 else
@@ -52,7 +53,7 @@ else
 end
 
 if test -d $HOME/.yarn
-  set -x fish_user_paths $HOME/.yarn/bin $fish_user_paths
+  set -x PATH $HOME/.yarn/bin PATH
 end
 
 alias dco="docker-compose"

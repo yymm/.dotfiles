@@ -3,6 +3,8 @@
 "
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#tab_nr_type = 2
 " experimental: not use taboo
 " let g:airline#extensions#taboo#enabled = 1
 if !has('nvim')

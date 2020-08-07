@@ -31,6 +31,7 @@ Plug 'neomake/neomake'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-css-color'
+Plug 'vim-scripts/vim-auto-save'
 
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -65,6 +66,7 @@ Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile' }
+Plug 'wavded/vim-stylus'
 Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html']
   \ }

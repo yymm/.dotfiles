@@ -36,4 +36,5 @@ let g:neomake_scss_stylelint_exe = $PWD .'/node_modules/.bin/stylelint'
 let g:vim_vue_plugin_load_full_syntax = 1
 let g:vim_vue_plugin_use_typescript = 1
 let g:vim_vue_plugin_use_sass = 1
+let g:vim_vue_plugin_use_stylus = 1
 let g:vim_vue_plugin_highlight_vue_attr = 1
