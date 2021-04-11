@@ -51,7 +51,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 "
 " nerdtree
 "
-map <C-e> :NERDTreeToggle<CR>
+" map <C-e> :NERDTreeToggle<CR>
+" let g:NERDTreeWinSize = 45
 
 "
 " neoterm
@@ -75,3 +76,11 @@ map <C-s> :FZF<CR>
 " let g:auto_save = 1  " enable AutoSave on Vim startup
 " let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " let g:auto_save_silent = 1  " do not display the auto-save notification
+
+"
+" vim-choosewin
+"
+" invoke with '-'
+nmap  -  <Plug>(choosewin)
+" if you want to use overlay feature
+let g:choosewin_overlay_enable = 1

@@ -41,3 +41,5 @@ function! ToggleBackground()
     set background=light
   endif
 endfunction
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE

@@ -14,8 +14,9 @@ nl = log --graph --decorate --oneline --name-status
 tl = log --graph --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(cyan)%d %Creset%s %Cblue[%cn]'
 alog = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
 po = push origin
-co = checkout
 br = branch
 vdiff = git difftool --tool=vimdiff
+co = switch
+sw = switch
 [core]
 editor = nvim

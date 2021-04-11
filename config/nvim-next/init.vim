@@ -15,8 +15,6 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'osyo-manga/vim-over'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -27,35 +25,31 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
 Plug 'majutsushi/tagbar'
 Plug 'osyo-manga/vim-anzu'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake' " nvim-lspconfigで代替中
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-css-color'
-Plug 'vim-scripts/vim-auto-save'
 
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete-emoji.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'Shougo/neco-vim'
-Plug 'prabirshrestha/asyncomplete-necovim.vim'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'kristijanhusak/defx-git'
+Plug 'kristijanhusak/defx-icons'
+Plug 't9md/vim-choosewin'
 
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
-" Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
-
-if has('python3')
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete-lsp'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'ujihisa/neco-look'
+Plug 'neovim/nvim-lspconfig'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'fszymanski/deoplete-emoji'
 
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'maxmellon/vim-jsx-pretty' " indentで悪さをしているので消す、代わりにtypescript-vimとvim-js-indentを入れた
 Plug 'hail2u/vim-css3-syntax'
 " Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
@@ -70,6 +64,14 @@ Plug 'wavded/vim-stylus'
 Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html']
   \ }
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jxnblk/vim-mdx-js'
+Plug 'jason0x43/vim-js-indent'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'gf3/peg.vim'
+
+Plug 'ruanyl/vim-gh-line'
 
 call plug#end()
 
@@ -78,5 +80,8 @@ runtime! keymap.vim
 runtime! plugins/main.vim
 runtime! plugins/colorscheme.vim
 runtime! plugins/lang.vim
-runtime! plugins/lsp.vim
-runtime! plugins/lint.vim
+" runtime! plugins/lint.vim " nvim-lspconfigで代替中
+runtime! plugins/defx.vim
+runtime! plugins/deoplete.vim
+" runtime! plugins/nvim-lspconfig.vim
+runtime! plugins/lc-nvim.vim
