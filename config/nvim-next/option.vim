@@ -65,3 +65,4 @@ let g:loaded_matchit           = 1
 autocmd MyAutoCmd FileType fortran set colorcolumn=5
 autocmd MyAutoCmd FileType cpp set ts=4 sts=0 sw=4 et
 autocmd MyAutoCmd FileType c set ts=4 sts=0 sw=4 et
+autocmd BufNewFile,BufRead *.tsx set filetype=typescriptreact

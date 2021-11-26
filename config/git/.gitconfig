@@ -20,3 +20,5 @@ co = switch
 sw = switch
 [core]
 editor = nvim
+[init]
+	defaultBranch = dev

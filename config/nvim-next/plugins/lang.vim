@@ -17,8 +17,8 @@ let g:rustfmt_autosave = 1
 "
 " vim-prettier
 "
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
+" let g:prettier#autoformat = 1
+" let g:prettier#autoformat_require_pragma = 0
 let g:neomake_vue_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 let g:neomake_typescript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'

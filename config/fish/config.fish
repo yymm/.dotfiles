@@ -5,6 +5,7 @@
 if test (uname -s) = Darwin
   set -x LANG ja_JP.UTF-8
   set -x PATH $HOME/.local/bin $PATH
+  set -x PATH /usr/local/opt/mysql-client/bin $PATH
 end
 
 if test -f /etc/lsb-release
@@ -32,6 +33,11 @@ if test -d $HOME/.cargo
   set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 end
 
+if test -d $HOME/.embulk
+  set -x PATH $HOME/.embulk/bin $PATH
+  alias embulk="java -jar $HOME/.embulk/bin/embulk"
+end
+
 if test -d $HOME/miniconda3
   set -x PATH $HOME/miniconda3/bin $PATH
   source (conda info --root)/etc/fish/conf.d/conda.fish
@@ -54,6 +60,11 @@ end
 
 if test -d $HOME/.yarn
   set -x PATH $HOME/.yarn/bin PATH
+end
+
+if type -q java
+  set -x PATH /usr/local/opt/openjdk@11/bin $PATH
+  set -gx CPPFLAGS "-I/usr/local/opt/openjdk@11/include"
 end
 
 alias dco="docker-compose"
