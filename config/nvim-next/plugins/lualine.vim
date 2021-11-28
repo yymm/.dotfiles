@@ -1,7 +1,7 @@
 lua <<EOF
 require'lualine'.setup {
   options = {
-    theme = 'onedark',
+    theme = 'palenight',
   },
   sections = {
     lualine_a = {'mode'},
