@@ -4,7 +4,7 @@ import os
 import sys
 import platform
 
-linux = platform.linux_distribution()[0]
+system = platform.system()
 
 # ------------------------------------------------------------------------------
 # neovim
@@ -36,12 +36,9 @@ def nyaovim():
 
 def tmux():
     print('>>> tmux')
-    if linux:
-        if linux == 'Ubuntu':
-            os_name = 'ubuntu'
-            os.system('ln -sf ~/.dotfiles/config/tmux/weather.sh ~/.tmux-powerline/segments/weather.sh')
-        else:
-            os_name = 'vm'
+    if system:
+        os_name = 'ubuntu'
+        os.system('ln -sf ~/.dotfiles/config/tmux/weather.sh ~/.tmux-powerline/segments/weather.sh')
     else:
         # mac
         os_name = 'mac'
@@ -56,6 +53,8 @@ def tmux():
 def git():
     print('>>> git')
     os.system('ln -sf ~/.dotfiles/config/git/.gitconfig ~/.gitconfig')
+    os.system('ln -sf ~/.dotfiles/config/git/.gitconfig_work ~/.gitconfig_work')
+    os.system('ln -sf ~/.dotfiles/config/git/.gitconfig_private ~/.gitconfig_private')
     print('<<< [ok] git')
 
 # ------------------------------------------------------------------------------
@@ -75,6 +74,17 @@ def fish():
     print('<<< [ok] fish')
 
 
+# ------------------------------------------------------------------------------
+# alacritty
+
+def alacritty():
+    print('>>> alacrity')
+    if not os.path.exists(os.environ['HOME'] +  '/.alacritty'):
+        os.mkdir(os.environ['HOME'] +  '/.alacritty')
+    os.system('ln -nsf ~/.dotfiles/config/alacritty ~/.config/alacritty')
+    print('<<< [ok] alacritty')
+
+
 if '__main__' == __name__:
     version = platform.python_version_tuple()
     if version[0] == '2':
@@ -84,6 +94,8 @@ if '__main__' == __name__:
     fish()
     vim()
     tmux()
-    # if linux == 'Ubuntu':
+    if system == 'Darwin':
+        alacritty()
+    # if system == 'Linux':
     #     nyaovim()
     #     font()

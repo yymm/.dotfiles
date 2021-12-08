@@ -1,2 +1,4 @@
 .DS_Store
 config/vimperator/.vimperator/info
+config/git/.gitconfig_private
+config/git/.gitconfig_work

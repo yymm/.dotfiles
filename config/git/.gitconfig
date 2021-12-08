@@ -1,6 +1,10 @@
 [user]
 email = yuya.yano.6260@gmail.com
 name = yuya yano
+[includeIf "gitdir:~/Documents/Work/"]
+path = ~/.gitconfig_work
+[includeIf "gitdir:~/Documents/Private/"]
+path = ~/.gitconfig_private
 [color]
 status = auto
 diff = auto
@@ -20,5 +24,3 @@ co = switch
 sw = switch
 [core]
 editor = nvim
-[init]
-	defaultBranch = dev

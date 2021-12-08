@@ -5,6 +5,10 @@
 if test (uname -s) = Darwin
   set -x LANG ja_JP.UTF-8
   set -x PATH $HOME/.local/bin $PATH
+  # bazel
+  set -x PATH $HOME/bin $PATH
+  # homebrew
+  set -x PATH /opt/homebrew/bin $PATH
   set -x PATH /usr/local/opt/mysql-client/bin $PATH
 end
 
@@ -59,7 +63,7 @@ else
 end
 
 if test -d $HOME/.yarn
-  set -x PATH $HOME/.yarn/bin PATH
+  set -x PATH $HOME/.yarn/bin $PATH
 end
 
 if type -q java
@@ -67,6 +71,15 @@ if type -q java
   set -gx CPPFLAGS "-I/usr/local/opt/openjdk@11/include"
 end
 
+# if type -q bazel
+#   ln -s $HOME/.bazel/bin/bazel.fish $HOME/.config/fish/completions/bazel.fish
+# end
+
+if type -q anyenv
+  status --is-interactive; and source (anyenv init -|psub)
+end
+
 alias dco="docker-compose"
 
-set -x N_PREFIX "$HOME/n"; contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/yuya_yano/google-cloud-sdk/path.fish.inc' ]; . '/Users/yuya_yano/google-cloud-sdk/path.fish.inc'; end
