@@ -37,6 +37,11 @@ if test -d $HOME/.cargo
   set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 end
 
+if test -d $HOME/.poetry
+  set -x PATH $HOME/.poetry/bin $PATH
+  poetry completions fish > ~/.config/fish/completions/poetry.fish
+end
+
 if test -d $HOME/.embulk
   set -x PATH $HOME/.embulk/bin $PATH
   alias embulk="java -jar $HOME/.embulk/bin/embulk"

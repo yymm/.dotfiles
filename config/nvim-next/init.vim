@@ -29,7 +29,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x', 'for': [ 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown' ]}
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'for': [ 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown' ]}
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'ruanyl/vim-gh-line'
