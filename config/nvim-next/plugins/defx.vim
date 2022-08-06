@@ -93,7 +93,7 @@ call defx#custom#option('_', {
   \ })
 
 autocmd MyAutoCmd BufWritePost * call defx#redraw()
-autocmd MyAutoCmd BufEnter * call defx#redraw()
+" autocmd MyAutoCmd BufEnter * call defx#redraw()
 " autocmd MyAutoCmd VimEnter * execute 'Defx'
 
 nnoremap <silent> <C-e> :<C-u> Defx -buffer-name=`'defx' . tabpagenr()` <CR>

@@ -24,3 +24,7 @@ co = switch
 sw = switch
 [core]
 editor = nvim
+[credential]
+helper = store
+[init]
+	defaultBranch = main

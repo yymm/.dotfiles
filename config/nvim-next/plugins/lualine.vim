@@ -1,15 +1,15 @@
 lua <<EOF
 require'lualine'.setup {
   options = {
-    theme = 'palenight',
+    theme = 'nord',
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch'},
+    lualine_b = {},
     lualine_c = {
       {
         'filename',
-        path = 2
+        path = 1
       }
     },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
@@ -22,7 +22,7 @@ require'lualine'.setup {
     lualine_c = {
       {
         'filename',
-        path = 2
+        path = 1
       }
     },
     lualine_x = {'location'},

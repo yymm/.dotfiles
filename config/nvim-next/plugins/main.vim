@@ -49,12 +49,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 "
-" nerdtree
-"
-" map <C-e> :NERDTreeToggle<CR>
-" let g:NERDTreeWinSize = 45
-
-"
 " neoterm
 "
 nnoremap <silent> ,rc :TREPLSendFile<cr>
@@ -65,10 +59,9 @@ nnoremap <silent> st :belowright Tnew<cr>
 nnoremap <silent> vs :terminal<cr>
 
 "
-" fzf
+" nvim-telescope
 "
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-map <C-s> :FZF<CR>
+" nnoremap <C-s> <cmd>Telescope find_files<cr>
 
 "
 " vim-auto-save
@@ -84,3 +77,9 @@ map <C-s> :FZF<CR>
 nmap  -  <Plug>(choosewin)
 " if you want to use overlay feature
 let g:choosewin_overlay_enable = 1
+
+"
+" fzf
+"
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+map <C-s> :FZF<CR>

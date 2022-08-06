@@ -30,6 +30,7 @@ else
   autocmd MyAutoCmd ColorScheme * hi SpecialKey ctermfg=darkmagenta
 endif
 set list listchars=tab:¦_
+set guifont=MesloLGS\ NF:h24
 " highlighting zenkaku space
 autocmd MyAutoCmd BufRead,BufNew * match Error /　/
 

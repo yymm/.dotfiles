@@ -84,7 +84,14 @@ if type -q anyenv
   status --is-interactive; and source (anyenv init -|psub)
 end
 
-alias dco="docker-compose"
+alias dco="docker compose"
 
 # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/yuya_yano/google-cloud-sdk/path.fish.inc' ]; . '/Users/yuya_yano/google-cloud-sdk/path.fish.inc'; end
+if [ -f '/Users/yuya_yano/google-cloud-sdk/path.fish.inc' ]; . '/Users/yuya_yano/google-cloud-sdk/path.fish.inc'; end
+
+# starship prompt
+if type -q anyenv
+  starship init fish | source
+end
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
