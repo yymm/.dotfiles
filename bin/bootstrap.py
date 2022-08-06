@@ -84,6 +84,15 @@ def alacritty():
     os.system('ln -nsf ~/.dotfiles/config/alacritty ~/.config/alacritty')
     print('<<< [ok] alacritty')
 
+# ------------------------------------------------------------------------------
+# starship
+
+def starship():
+    print('>>> starship')
+    os.system('ln -nsf ~/.dotfiles/config/starship/starship.toml ~/.config/starship.toml')
+    print('<<< [ok] starship')
+
+
 
 if '__main__' == __name__:
     version = platform.python_version_tuple()
@@ -94,6 +103,7 @@ if '__main__' == __name__:
     fish()
     vim()
     tmux()
+    starship()
     if system == 'Darwin':
         alacritty()
     # if system == 'Linux':
