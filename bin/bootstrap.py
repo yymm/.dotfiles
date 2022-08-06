@@ -53,8 +53,8 @@ def tmux():
 def git():
     print('>>> git')
     os.system('ln -sf ~/.dotfiles/config/git/.gitconfig ~/.gitconfig')
-    os.system('ln -sf ~/.dotfiles/config/git/.gitconfig_work ~/.gitconfig_work')
-    os.system('ln -sf ~/.dotfiles/config/git/.gitconfig_private ~/.gitconfig_private')
+    os.system('ln -sf ~/.dotfiles/config/git/config/.gitconfig_work ~/.gitconfig_work')
+    os.system('ln -sf ~/.dotfiles/config/git/config/.gitconfig_private ~/.gitconfig_private')
     print('<<< [ok] git')
 
 # ------------------------------------------------------------------------------

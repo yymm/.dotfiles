@@ -27,4 +27,4 @@ editor = nvim
 [credential]
 helper = store
 [init]
-	defaultBranch = main
+defaultBranch = main
