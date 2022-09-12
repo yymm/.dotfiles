@@ -5,6 +5,7 @@ import sys
 import platform
 
 system = platform.system()
+platform_str = platform.platform()
 
 # ------------------------------------------------------------------------------
 # neovim
@@ -36,7 +37,9 @@ def nyaovim():
 
 def tmux():
     print('>>> tmux')
-    if system:
+    if "WSL2" in platform_str:
+        os_name = 'wsl2'
+    elif system == 'Linux':
         os_name = 'ubuntu'
         os.system('ln -sf ~/.dotfiles/config/tmux/weather.sh ~/.tmux-powerline/segments/weather.sh')
     else:

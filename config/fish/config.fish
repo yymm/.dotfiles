@@ -27,9 +27,8 @@ if type -q nvim
   set -x XDG_CONFIG_HOME $HOME/.config
 end
 
-if type -q go
-  set -x GOPATH $HOME/go
-  set -x PATH $GOPATH/bin $PATH
+if test -d /usr/local/go
+  set -x PATH "/usr/local/go/bin" $PATH
 end
 
 if test -d $HOME/.cargo
@@ -90,7 +89,7 @@ alias dco="docker compose"
 if [ -f '/Users/yuya_yano/google-cloud-sdk/path.fish.inc' ]; . '/Users/yuya_yano/google-cloud-sdk/path.fish.inc'; end
 
 # starship prompt
-if type -q anyenv
+if type -q starship
   starship init fish | source
 end
 set -gx VOLTA_HOME "$HOME/.volta"

@@ -67,3 +67,19 @@ autocmd MyAutoCmd FileType fortran set colorcolumn=5
 autocmd MyAutoCmd FileType cpp set ts=4 sts=0 sw=4 et
 autocmd MyAutoCmd FileType c set ts=4 sts=0 sw=4 et
 autocmd BufNewFile,BufRead *.tsx set filetype=typescriptreact
+
+"
+" WSL2
+"
+let g:clipboard = {
+    \   'name': 'myClipboard',
+    \   'copy': {
+    \      '+': 'win32yank.exe -i',
+    \      '*': 'win32yank.exe -i',
+    \    },
+    \   'paste': {
+    \      '+': 'win32yank.exe -o',
+    \      '*': 'win32yank.exe -o',
+    \   },
+    \   'cache_enabled': 1,
+    \ }
