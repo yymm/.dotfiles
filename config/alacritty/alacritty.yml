@@ -24,7 +24,7 @@
   #TERM: alacritty
 
 window:
-  opacity: 0.9
+  opacity: 0.7
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns

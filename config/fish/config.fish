@@ -27,8 +27,13 @@ if type -q nvim
   set -x XDG_CONFIG_HOME $HOME/.config
 end
 
+# if type -q go
+#   set -x GOPATH $HOME/go
+#   set -x PATH $GOPATH/bin $PATH
+# end
 if test -d /usr/local/go
-  set -x PATH "/usr/local/go/bin" $PATH
+  set -x PATH /usr/local/go/bin $PATH
+  set -x PATH (go env GOPATH)/bin $PATH
 end
 
 if test -d $HOME/.cargo
