@@ -32,8 +32,9 @@ end
 #   set -x PATH $GOPATH/bin $PATH
 # end
 if test -d /usr/local/go
-  set -x PATH /usr/local/go/bin $PATH
-  set -x PATH (go env GOPATH)/bin $PATH
+  set -x PATH $(asdf where golang)/go/bin $PATH
+  # set -x PATH /usr/local/go/bin $PATH
+  # set -x PATH (go env GOPATH)/bin $PATH
 end
 
 if test -d $HOME/.cargo
@@ -90,12 +91,25 @@ end
 
 alias dco="docker compose"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yuya_yano/google-cloud-sdk/path.fish.inc' ]; . '/Users/yuya_yano/google-cloud-sdk/path.fish.inc'; end
-
 # starship prompt
 if type -q starship
   starship init fish | source
 end
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
+
+if test -d /opt/homebrew/opt/ruby
+  set -x PATH /opt/homebrew/opt/ruby/bin $PATH
+end
+
+if test -d $HOME/development/flutter
+  set -x PATH $HOME/development/flutter/bin $PATH
+end
+
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/yuya_yano/google-cloud-sdk/path.fish.inc' ]; . '/Users/yuya_yano/google-cloud-sdk/path.fish.inc'; end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yuya_yano/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/yuya_yano/Downloads/google-cloud-sdk/path.fish.inc'; end

@@ -50,6 +50,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jparise/vim-graphql'
 
 Plug 'hashivim/vim-terraform'
+Plug 'github/copilot.vim'
+
+Plug 'digitaltoad/vim-pug'
 
 call plug#end()
 
