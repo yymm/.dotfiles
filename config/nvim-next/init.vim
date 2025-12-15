@@ -14,7 +14,12 @@ Plug 'tyru/caw.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'osyo-manga/vim-over'
 Plug 'tpope/vim-fugitive'
-Plug 'nathanaelkane/vim-indent-guides'
+
+" indent plugin
+" Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'shellRaining/hlchunk.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 Plug 'kassio/neoterm'
 Plug 'LeafCage/yankround.vim'
 Plug 'mattn/emmet-vim'
@@ -41,6 +46,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 
 " file tree
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'HiPhish/rainbow-delimiters.nvim'
 Plug 'ruanyl/vim-gh-line'
 
 " new powerline
@@ -50,6 +56,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jparise/vim-graphql'
 
 Plug 'hashivim/vim-terraform'
+
+" debugger
+Plug 'mfussenegger/nvim-dap'
+
+" flutter
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'stevearc/dressing.nvim' " optional for vim.ui.select
+" Plug 'nvim-flutter/flutter-tools.nvim'
+" coc-flutterを使わない場合に使う
+
+" Copilot
+Plug 'github/copilot.vim'
 
 call plug#end()
 

@@ -15,11 +15,15 @@ Current favorite fonts
 - git
 - fish
   - fisherman
+- zsh
+  - 
 - tmux
   - tmux-powerline
     - tmux-cpu-men-load
 - neovim/vim
 - alacritty
+- kitty
+- starship
 
 # Requirements
 - [fisherman](https://github.com/fisherman/fisherman)

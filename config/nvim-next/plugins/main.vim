@@ -83,3 +83,74 @@ let g:choosewin_overlay_enable = 1
 "
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 map <C-s> :FZF<CR>
+
+"
+" flutter-tools
+"
+" lua << EOF
+"   require("flutter-tools").setup {} -- use defaults
+" EOF
+" coc-flutterを使わない場合に使う
+
+"
+" hlchunk.nvim
+"
+" lua << EOF
+"   require("hlchunk").setup({})
+"   local default_conf = {
+"       priority = 15,
+"       style = {
+"           { fg = "#806d9c" },
+"           { fg = "#c21f30" },
+"       },
+"       use_treesitter = true,
+"       chars = {
+"           horizontal_line = "─",
+"           vertical_line = "│",
+"           left_top = "╭",
+"           left_bottom = "╰",
+"           right_arrow = ">",
+"       },
+"       textobject = "",
+"       max_file_size = 1024 * 1024,
+"       error_sign = true,
+"       -- animation related
+"       duration = 200,
+"       delay = 300,
+"   }
+" EOF
+
+"
+" indent-blankline.nvim
+"
+
+lua << EOF
+  require("ibl").setup()
+EOF
+
+"
+" HiPhish/rainbow-delimiters.nvim
+"
+let g:rainbow_delimiters = {
+    \ 'strategy': {
+        \ '': rainbow_delimiters#strategy.global,
+        \ 'vim': rainbow_delimiters#strategy.local,
+    \ },
+    \ 'query': {
+        \ '': 'rainbow-delimiters',
+        \ 'lua': 'rainbow-blocks',
+    \ },
+    \ 'priority': {
+        \ '': 110,
+        \ 'lua': 210,
+    \ },
+    \ 'highlight': [
+        \ 'RainbowDelimiterViolet',
+        \ 'RainbowDelimiterBlue',
+        \ 'RainbowDelimiterGreen',
+        \ 'RainbowDelimiterCyan',
+        \ 'RainbowDelimiterYellow',
+        \ 'RainbowDelimiterOrange',
+        \ 'RainbowDelimiterRed',
+    \ ],
+\ }

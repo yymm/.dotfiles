@@ -83,7 +83,7 @@ call defx#custom#column('git', 'indicators', {
   \ })
 
 call defx#custom#option('_', {
-  \ 'winwidth': 80,
+  \ 'winwidth': 40,
   \ 'split': 'vertical',
   \ 'direction': 'topleft',
   \ 'show_ignored_files': 1,

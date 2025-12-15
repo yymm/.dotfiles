@@ -103,7 +103,7 @@ if '__main__' == __name__:
         print('Only python3!')
         sys.exit(1)
     git()
-    fish()
+    # fish()
     vim()
     tmux()
     starship()

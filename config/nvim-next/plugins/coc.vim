@@ -185,5 +185,6 @@ let g:coc_global_extensions = [
       \'coc-toml',
       \'coc-yaml',
       \'coc-vimlsp',
-      \'coc-spell-checker'
+      \'coc-spell-checker',
+      \'coc-flutter'
 \]
