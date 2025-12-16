@@ -15,37 +15,23 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'osyo-manga/vim-over'
 Plug 'tpope/vim-fugitive'
 
-" indent plugin
-" Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'shellRaining/hlchunk.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
-
 Plug 'kassio/neoterm'
 Plug 'LeafCage/yankround.vim'
 Plug 'mattn/emmet-vim'
 Plug 'osyo-manga/vim-anzu'
 
 " fuzzy finder
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'ap/vim-css-color'
-
-" filer
-" Plug 'kyazdani42/nvim-web-devicons' " for file icons
-" Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'for': [ 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown' ]}
-
 " file tree
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'HiPhish/rainbow-delimiters.nvim'
 Plug 'ruanyl/vim-gh-line'
 
@@ -79,7 +65,7 @@ runtime! plugins/defx.vim
 " runtime! plugins/nvim-tree.vim
 runtime! plugins/coc.vim
 runtime! plugins/lualine.vim
-runtime! plugins/treesitter.vim
+" runtime! plugins/treesitter.vim
 " runtime! plugins/deoplete.vim
 " runtime! plugins/nvim-lspconfig.vim
 " runtime! plugins/lc-nvim.vim
