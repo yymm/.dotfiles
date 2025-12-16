@@ -7,10 +7,15 @@ Target: Ubuntu, Mac
 
 # Pre-Requirements
 
-## Install git and tmux, neovim, starship
+## Install git and gh, tmux, neovim, starship
 
-- git, tmux, neovim: install from package manager(apt or brew)
+- git, gh, tmux, neovim: install from package manager(apt or brew)
 - [starship](https://starship.rs/ja-JP/): install instructions on the site
+
+```
+$ gh auth login
+$ gh auth setup-git # https://cli.github.com/manual/gh_auth_setup-git
+```
 
 ## Install tmux-powerline, tmux-apu-mem-load
 
